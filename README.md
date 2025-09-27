@@ -1,4 +1,3 @@
-# SciTrek
-Benchmarking long-context language models on scientific articles
+# Benchmarking Long-Context Language Models on Scientific Articles
 
 in progress ...
