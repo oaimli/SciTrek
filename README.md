@@ -26,7 +26,20 @@ Each sample of our data is composed of the following key-value pairs:
 
 ```
 ### What is in this repository
-
+```
+/
+├── benchmark/              --> (Code for construction of our benchmark, and loading our benchmark data)
+├── docs/                   --> (The website for the work)
+├── eval_test/              --> (Code for evaluation in terms of EM and F1, and fine-grained analysis)
+├── other/                  --> (Other analysis, e.g., failure patterns and question difficulty)
+├── pilot_study/            --> (Pilot test of the models before the project got started)
+├── prerequisite/           --> (Analysis to show our numerical reasoning is fundamental to real-world tasks, e.g., in LongBench v2)
+├── results_test/           --> (Generations from the benchmarking models)   
+├── test_full/              --> (The inference code of models based on full contexts)
+├── test_meta/              --> (The inference code of models based on metadata contexts)
+├── train_full/             --> (Post-training with SciTrek on open-source models)   
+└── README.md               --> (This readme file)
+```
 
 ### Use the constructed data from Hugging Face
 ```python
@@ -98,10 +111,36 @@ for sample in test_dataset:
 
 ### Construct the data based on local files
 
+First, download the files from [Google Drive](https://drive.google.com/drive/folders/10LoC8ga5qoxK1axDYD_Hxpi9Pv0bz9KN?usp=sharing).
+
+Replace the target folders with the downloaded ones:
+- pdfs -> SciTrek/benchmark/pdfs
+- clusters -> SciTrek/benchmark/dataset/clusters
+- samples -> SciTrek/benchmark/dataset/samples
+
+Then, you will see how to load the data in SciTrek/benchmark/dataset/data_loading.py
+
+
 ### Model generations and evaluation results
+
+Download the results_test folder from Google Drive and replace the results_test with it, then you will see model generations in separate JSON Lines files for models.
+
+These generation results are from test_full (on full contexts) and test_meta (on metadata contexts), running inference of different models.
+
+You can see the evaluation pipeline in eval_test/evaluating_generations.py, and also other analyses, including fine-grained error analysis in eval_test.
 
 ### Post-training open-weight LLMs with SciTrek
 
-If you are interested in testing your model with our benchmark or using our constructed training data in your long-context post-training, our data is available on [Google Drive](https://drive.google.com/drive/folders/10LoC8ga5qoxK1axDYD_Hxpi9Pv0bz9KN?usp=sharing)
+If you are going to use our dataset to test or train your model, please cite our paper:
+
+[Li et al. 2025] Miao Li, Alexander Gurung, Irina Saparina, Mirella Lapata. "Who Gets Cited Most? Benchmarking Long-Context Numerical Reasoning on Scientific Articles". arXiv 2509.21028, 2025.
+```
+@inproceedings{scitrek_2025,
+  title={Who Gets Cited Most? Benchmarking Long-Context Numerical Reasoning on Scientific Articles},
+  author={Miao Li, Alexander Gurung, Irina Saparina, Mirella Lapata},
+  booktitle={arXiv 2509.21028},
+  year={2025}
+}
+
 
 If you have any questions about using our data, feel free to contact miao.li@ed.ac.uk.
