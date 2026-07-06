@@ -1,0 +1,30 @@
+If PUMA wants to achieve the EBIT targets outlined in the latest 2024 outlook, what percentage increase must be achieved in the second half of 2024 compared to the second half of 2023?（Results are rounded to the nearest integer）
+arithmetic
+
+In the financial reports of Apple Inc. and Samsung Electronics for the years 2022 and 2023, which company has a higher percentage of revenue derived from the product category of phones, and in what range do the differences in this dependency between the two companies in the two years fall?
+comparison, filtering, aggregation, logic, artihemetic
+
+"What is the difference between the datasets of the two papers?"
+logic
+
+"Have anyone tried training with 4-bit quantization? Did you observe some performance difference with higher precision?"
+comparison
+
+"What are the latest works on finetuning an auto-regressive LM for dense passage retrieval? How are their performance compared with bi-directional encoders?"
+sorting, arithemitic, logic
+
+"Which downstream task can solved by AlphaFold3 but cannot performed by ESM-3?"
+logic, filtering
+
+
+"Citation graph is a good tool to find relevant work and to help understand the evolution of the domain. What recent research has been done to analyze scientific discourse and generate citation content using citation networks and related textual information?"
+sorting
+
+"Which motion degrees of freedom of levitated nanospheres have been experimentally studied?"
+filtering,
+
+"What types of mechanical resonators have been used to couple with superconducting qubits?"
+filtering,
+
+Compared to 2023, how has the percentage of finished goods apparel factories from countries other than Vietnam, China, and Cambodia changed in 2024?
+artithmetic, aggregation, comparison

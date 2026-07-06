@@ -11,7 +11,7 @@ __MACOSX/
 /train_full/sft/generations/
 /eval_test/more_all.xlsx
 /eval_test/more_filtering.xlsx
-/results_test/
+/results_test/*.jsonl
 /prerequisite/longbench_v2.jsonl
 /prerequisite/scholarqabench.jsonl
 /train_full/ood/loong/
