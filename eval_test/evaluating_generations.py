@@ -116,12 +116,11 @@ if __name__ == "__main__":
     # comparing models in different sample_level and target_mode
     output_files = []
     for generation_result in os.listdir(result_folder):
-        if generation_result.endswith(".jsonl") and "qwen25_coder" in generation_result:
+        if generation_result.endswith(".jsonl"):
             output_files.append(generation_result)
     output_files.sort()
 
     for generation_file in output_files:
-
         answers = []
         generation_batches = []
         with jsonlines.open(os.path.join(result_folder, f"{generation_file}")) as reader:
