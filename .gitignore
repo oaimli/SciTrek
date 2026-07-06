@@ -1,19 +1,19 @@
 *__pycache__*
 __MACOSX/
 /.idea
-/benchmark/pdfs/
+/benchmark/pdfs/*.pdf
 /benchmark/md_marker/
 /benchmark/md_gemini/
-/benchmark/dataset/samples/
+/benchmark/dataset/samples/final/
+/benchmark/dataset/clusters/*.jsonl
 /benchmark/human/prolific/annotations/
 /benchmark/human/prolific/analysis/
+/results_test/*.jsonl
 
 /train_full/sft/generations/
 /eval_test/more_all.xlsx
 /eval_test/more_filtering.xlsx
-/results_test/*.jsonl
 /prerequisite/longbench_v2.jsonl
 /prerequisite/scholarqabench.jsonl
 /train_full/ood/loong/
 /train_full/ood/longbenchv2/
-/benchmark/dataset/clusters
