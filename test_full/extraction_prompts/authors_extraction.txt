@@ -1,0 +1,8 @@
+You are given a chunk of an scientific article.
+
+<MARKDOWN>
+
+If the author list of the article is included in the given text, please locate and extract the author list.
+You must output the author list in the following JSON format, and do not include any extra text.
+{"authors": "the author list separated with commas"}
+If there is no author list in the given text, just output {"authors": ""}

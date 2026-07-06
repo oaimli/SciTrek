@@ -1,0 +1,8 @@
+You are given a chunk of an scientific article.
+
+<MARKDOWN>
+
+If an integral or segmental reference section is included in the given text, please count the number of the references.
+You must output the reference count in the following JSON format, and do not include any extra text.
+{"reference_count": "the number of references"}
+If there is no any reference section in the given text, just output {"reference_count": "0"}

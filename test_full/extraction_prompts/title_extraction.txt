@@ -1,0 +1,8 @@
+You are given a chunk of an scientific article.
+
+<MARKDOWN>
+
+If the article title is included in the given text, please locate and extract the title.
+You must output the title in the following JSON format, and do not include any extra text.
+{"title": "the extracted title"}
+If there is no article title in the given text, just output {"title": ""}

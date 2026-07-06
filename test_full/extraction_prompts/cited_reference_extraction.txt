@@ -1,0 +1,11 @@
+You are given the title of one scientific article (Article A) and a chunk of another scientific article (Article B).
+
+The title of Article A:
+<TITLE>
+
+The chunk of Article B:
+<MARKDOWN>
+
+Please check whether Article A is cited by Article B. In other words, the task is to check if the title of Article A exists in the given chunk of Article B.
+You must output your answer in the following JSON format, and do not include any extra text.
+{"a_cited_by_b": "true or false"}
