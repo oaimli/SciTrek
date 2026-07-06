@@ -1,0 +1,46 @@
+You are given a database with three tables: articles, citing_cited, and article_author.
+
+The articles table contains the following columns:
+- article_id (String): the unique identifier of the article;
+- article_title (String): the title of the article;
+- title_word_count (Integer): the number of words in the article's title;
+- author_count (Integer): the number of authors for the article;
+- reference_count (Integer): the number of references cited in the article.
+
+The citing_cited table contains the following columns:
+- relation_id (String): the unique identifier of the citation relationship between two articles;
+- article_id_citing (String): the identifier of the article which cites the other article;
+- article_id_cited (String): the identifier of the article which is cited by the other article.
+
+The article_author table contains the following columns:
+- relation_id (String): the unique identifier of the article-author relationship;
+- article_id (String): the identifier of the associated article;
+- author_name (String): the name of the author;
+- author_position (Integer): the position of the author in the author list (starting from 0 for the first author).
+
+Assumptions:
+- The articles table contains multiple entries;
+- The article_author table maps authors to articles, where one author can contribute to multiple articles, and one article can have multiple authors;
+- The citing_cited table represents citation relationships among articles in the articles table, where one article can be cited by multiple others.
+
+Available core SQL commands.
+- Aggregating: MIN(), MAX(), COUNT(), SUM(), AVG(), DISTINCT
+- Filtering: WHERE
+- Organizing: ORDER BY, ASC, DESC, GROUP BY
+Available core SQL operators:
+- Comparison: =, >, <, >=, <=, <>, LIKE
+- Arithmetic: +, -, *, /, %
+- Logical: AND, NOT, OR, BETWEEN, IN
+
+Your task is to:
+1. Understand the database scheme described above and the given natural language question below;
+2. Convert the natural language question into a SQL query in the context of the database schema with the listed SQL commands and operators.
+
+The given natural language question:
+<QUESTION>
+
+Do not output relation_id or article_id in generated SQL query.
+Use the SQL commands and operators listed above.
+Make the generated SQL query aligned well with the natural language question.
+You must output the natural langauge question and the generated SQL query in the following JSON format, and do not include any extra text:
+{"question": "the given question", "sql": "the generated SQL query"}

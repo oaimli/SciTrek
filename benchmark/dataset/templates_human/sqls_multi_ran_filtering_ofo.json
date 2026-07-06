@@ -1,0 +1,537 @@
+[
+    {
+        "type": "multi_ran_filtering_ofo",
+        "focus": "author_count",
+        "sql": "SELECT author_count FROM articles WHERE title_word_count = {title-word-count};"
+    },
+    {
+        "type": "multi_ran_filtering_ofo",
+        "focus": "author_count",
+        "sql": "SELECT author_count FROM articles WHERE title_word_count > {title-word-count};"
+    },
+    {
+        "type": "multi_ran_filtering_ofo",
+        "focus": "author_count",
+        "sql": "SELECT author_count FROM articles WHERE title_word_count < {title-word-count};"
+    },
+    {
+        "type": "multi_ran_filtering_ofo",
+        "focus": "author_count",
+        "sql": "SELECT author_count FROM articles WHERE title_word_count >= {title-word-count};"
+    },
+    {
+        "type": "multi_ran_filtering_ofo",
+        "focus": "author_count",
+        "sql": "SELECT author_count FROM articles WHERE title_word_count <= {title-word-count};"
+    },
+    {
+        "type": "multi_ran_filtering_ofo",
+        "focus": "author_count",
+        "sql": "SELECT author_count FROM articles WHERE title_word_count <> {title-word-count};"
+    },
+    {
+        "type": "multi_ran_filtering_ofo",
+        "focus": "author_count",
+        "sql": "SELECT author_count FROM articles WHERE article_title LIKE {article-title-fragment};"
+    },
+    {
+        "type": "multi_ran_filtering_ofo",
+        "focus": "author_count",
+        "sql": "SELECT author_count FROM articles WHERE reference_count = {reference-count};"
+    },
+    {
+        "type": "multi_ran_filtering_ofo",
+        "focus": "author_count",
+        "sql": "SELECT author_count FROM articles WHERE reference_count > {reference-count};"
+    },
+    {
+        "type": "multi_ran_filtering_ofo",
+        "focus": "author_count",
+        "sql": "SELECT author_count FROM articles WHERE reference_count < {reference-count};"
+    },
+    {
+        "type": "multi_ran_filtering_ofo",
+        "focus": "author_count",
+        "sql": "SELECT author_count FROM articles WHERE reference_count >= {reference-count};"
+    },
+    {
+        "type": "multi_ran_filtering_ofo",
+        "focus": "author_count",
+        "sql": "SELECT author_count FROM articles WHERE reference_count <= {reference-count};"
+    },
+    {
+        "type": "multi_ran_filtering_ofo",
+        "focus": "author_count",
+        "sql": "SELECT author_count FROM articles WHERE reference_count <> {reference-count};"
+    },
+    {
+        "type": "multi_ran_filtering_ofo",
+        "focus": "author_list",
+        "sql": "SELECT author_name FROM article_author WHERE author_position = {author-position};"
+    },
+    {
+        "type": "multi_ran_filtering_ofo",
+        "focus": "author_list",
+        "sql": "SELECT author_name FROM article_author WHERE author_position > {author-position};"
+    },
+    {
+        "type": "multi_ran_filtering_ofo",
+        "focus": "author_list",
+        "sql": "SELECT author_name FROM article_author WHERE author_position < {author-position};"
+    },
+    {
+        "type": "multi_ran_filtering_ofo",
+        "focus": "author_list",
+        "sql": "SELECT author_name FROM article_author WHERE author_position >= {author-position};"
+    },
+    {
+        "type": "multi_ran_filtering_ofo",
+        "focus": "author_list",
+        "sql": "SELECT author_name FROM article_author WHERE author_position <= {author-position};"
+    },
+    {
+        "type": "multi_ran_filtering_ofo",
+        "focus": "author_list",
+        "sql": "SELECT author_name FROM article_author WHERE author_position <> {author-position};"
+    },
+    {
+        "type": "multi_ran_filtering_ofo",
+        "focus": "reference_count",
+        "sql": "SELECT reference_count FROM articles WHERE title_word_count = {title-word-count};"
+    },
+    {
+        "type": "multi_ran_filtering_ofo",
+        "focus": "reference_count",
+        "sql": "SELECT reference_count FROM articles WHERE title_word_count > {title-word-count};"
+    },
+    {
+        "type": "multi_ran_filtering_ofo",
+        "focus": "reference_count",
+        "sql": "SELECT reference_count FROM articles WHERE title_word_count < {title-word-count};"
+    },
+    {
+        "type": "multi_ran_filtering_ofo",
+        "focus": "reference_count",
+        "sql": "SELECT reference_count FROM articles WHERE title_word_count >= {title-word-count};"
+    },
+    {
+        "type": "multi_ran_filtering_ofo",
+        "focus": "reference_count",
+        "sql": "SELECT reference_count FROM articles WHERE title_word_count <= {title-word-count};"
+    },
+    {
+        "type": "multi_ran_filtering_ofo",
+        "focus": "reference_count",
+        "sql": "SELECT reference_count FROM articles WHERE title_word_count <> {title-word-count};"
+    },
+    {
+        "type": "multi_ran_filtering_ofo",
+        "focus": "reference_count",
+        "sql": "SELECT reference_count FROM articles WHERE article_title LIKE {article-title-fragment};"
+    },
+    {
+        "type": "multi_ran_filtering_ofo",
+        "focus": "reference_count",
+        "sql": "SELECT reference_count FROM articles WHERE author_count = {author-count};"
+    },
+    {
+        "type": "multi_ran_filtering_ofo",
+        "focus": "reference_count",
+        "sql": "SELECT reference_count FROM articles WHERE author_count > {author-count};"
+    },
+    {
+        "type": "multi_ran_filtering_ofo",
+        "focus": "reference_count",
+        "sql": "SELECT reference_count FROM articles WHERE author_count < {author-count};"
+    },
+    {
+        "type": "multi_ran_filtering_ofo",
+        "focus": "reference_count",
+        "sql": "SELECT reference_count FROM articles WHERE author_count >= {author-count};"
+    },
+    {
+        "type": "multi_ran_filtering_ofo",
+        "focus": "reference_count",
+        "sql": "SELECT reference_count FROM articles WHERE author_count <= {author-count};"
+    },
+    {
+        "type": "multi_ran_filtering_ofo",
+        "focus": "reference_count",
+        "sql": "SELECT reference_count FROM articles WHERE author_count <> {author-count};"
+    },
+    {
+        "type": "multi_ran_filtering_ofo",
+        "focus": "title_entire",
+        "sql": "SELECT article_title FROM articles WHERE title_word_count = {title-word-count};"
+    },
+    {
+        "type": "multi_ran_filtering_ofo",
+        "focus": "title_entire",
+        "sql": "SELECT article_title FROM articles WHERE title_word_count > {title-word-count};"
+    },
+    {
+        "type": "multi_ran_filtering_ofo",
+        "focus": "title_entire",
+        "sql": "SELECT article_title FROM articles WHERE title_word_count < {title-word-count};"
+    },
+    {
+        "type": "multi_ran_filtering_ofo",
+        "focus": "title_entire",
+        "sql": "SELECT article_title FROM articles WHERE title_word_count >= {title-word-count};"
+    },
+    {
+        "type": "multi_ran_filtering_ofo",
+        "focus": "title_entire",
+        "sql": "SELECT article_title FROM articles WHERE title_word_count <= {title-word-count};"
+    },
+    {
+        "type": "multi_ran_filtering_ofo",
+        "focus": "title_entire",
+        "sql": "SELECT article_title FROM articles WHERE title_word_count <> {title-word-count};"
+    },
+    {
+        "type": "multi_ran_filtering_ofo",
+        "focus": "title_entire",
+        "sql": "SELECT article_title FROM articles WHERE article_title LIKE {article-title-fragment};"
+    },
+    {
+        "type": "multi_ran_filtering_ofo",
+        "focus": "title_entire",
+        "sql": "SELECT article_title FROM articles WHERE author_count = {author-count};"
+    },
+    {
+        "type": "multi_ran_filtering_ofo",
+        "focus": "title_entire",
+        "sql": "SELECT article_title FROM articles WHERE author_count > {author-count};"
+    },
+    {
+        "type": "multi_ran_filtering_ofo",
+        "focus": "title_entire",
+        "sql": "SELECT article_title FROM articles WHERE author_count < {author-count};"
+    },
+    {
+        "type": "multi_ran_filtering_ofo",
+        "focus": "title_entire",
+        "sql": "SELECT article_title FROM articles WHERE author_count >= {author-count};"
+    },
+    {
+        "type": "multi_ran_filtering_ofo",
+        "focus": "title_entire",
+        "sql": "SELECT article_title FROM articles WHERE author_count <= {author-count};"
+    },
+    {
+        "type": "multi_ran_filtering_ofo",
+        "focus": "title_entire",
+        "sql": "SELECT article_title FROM articles WHERE author_count <> {author-count};"
+    },
+        {
+        "type": "multi_ran_filtering_ofo",
+        "focus": "title_entire",
+        "sql": "SELECT article_title FROM articles WHERE reference_count = {reference-count};"
+    },
+    {
+        "type": "multi_ran_filtering_ofo",
+        "focus": "title_entire",
+        "sql": "SELECT article_title FROM articles WHERE reference_count > {reference-count};"
+    },
+    {
+        "type": "multi_ran_filtering_ofo",
+        "focus": "title_entire",
+        "sql": "SELECT article_title FROM articles WHERE reference_count < {reference-count};"
+    },
+    {
+        "type": "multi_ran_filtering_ofo",
+        "focus": "title_entire",
+        "sql": "SELECT article_title FROM articles WHERE reference_count >= {reference-count};"
+    },
+    {
+        "type": "multi_ran_filtering_ofo",
+        "focus": "title_entire",
+        "sql": "SELECT article_title FROM articles WHERE reference_count <= {reference-count};"
+    },
+    {
+        "type": "multi_ran_filtering_ofo",
+        "focus": "title_entire",
+        "sql": "SELECT article_title FROM articles WHERE reference_count <> {reference-count};"
+    },
+    {
+        "type": "multi_ran_filtering_ofo",
+        "focus": "title_word_count",
+        "sql": "SELECT title_word_count FROM articles WHERE article_title LIKE {article-title-fragment};"
+    },
+    {
+        "type": "multi_ran_filtering_ofo",
+        "focus": "title_word_count",
+        "sql": "SELECT title_word_count FROM articles WHERE author_count = {author-count};"
+    },
+    {
+        "type": "multi_ran_filtering_ofo",
+        "focus": "title_word_count",
+        "sql": "SELECT title_word_count FROM articles WHERE author_count > {author-count};"
+    },
+    {
+        "type": "multi_ran_filtering_ofo",
+        "focus": "title_word_count",
+        "sql": "SELECT title_word_count FROM articles WHERE author_count < {author-count};"
+    },
+    {
+        "type": "multi_ran_filtering_ofo",
+        "focus": "title_word_count",
+        "sql": "SELECT title_word_count FROM articles WHERE author_count >= {author-count};"
+    },
+    {
+        "type": "multi_ran_filtering_ofo",
+        "focus": "title_word_count",
+        "sql": "SELECT title_word_count FROM articles WHERE author_count <= {author-count};"
+    },
+    {
+        "type": "multi_ran_filtering_ofo",
+        "focus": "title_word_count",
+        "sql": "SELECT title_word_count FROM articles WHERE author_count <> {author-count};"
+    },
+        {
+        "type": "multi_ran_filtering_ofo",
+        "focus": "title_word_count",
+        "sql": "SELECT title_word_count FROM articles WHERE reference_count = {reference-count};"
+    },
+    {
+        "type": "multi_ran_filtering_ofo",
+        "focus": "title_word_count",
+        "sql": "SELECT title_word_count FROM articles WHERE reference_count > {reference-count};"
+    },
+    {
+        "type": "multi_ran_filtering_ofo",
+        "focus": "title_word_count",
+        "sql": "SELECT title_word_count FROM articles WHERE reference_count < {reference-count};"
+    },
+    {
+        "type": "multi_ran_filtering_ofo",
+        "focus": "title_word_count",
+        "sql": "SELECT title_word_count FROM articles WHERE reference_count >= {reference-count};"
+    },
+    {
+        "type": "multi_ran_filtering_ofo",
+        "focus": "title_word_count",
+        "sql": "SELECT title_word_count FROM articles WHERE reference_count <= {reference-count};"
+    },
+    {
+        "type": "multi_ran_filtering_ofo",
+        "focus": "title_word_count",
+        "sql": "SELECT title_word_count FROM articles WHERE reference_count <> {reference-count};"
+    },
+    {
+        "type": "multi_ran_filtering_ofo",
+        "focus": "author_count",
+        "sql": "SELECT author_count FROM articles WHERE author_count + 50 = reference_count;"
+    },
+    {
+        "type": "multi_ran_filtering_ofo",
+        "focus": "author_count",
+        "sql": "SELECT author_count FROM articles WHERE reference_count - author_count = 40;"
+    },
+    {
+        "type": "multi_ran_filtering_ofo",
+        "focus": "author_count",
+        "sql": "SELECT author_count FROM articles WHERE title_word_count * 10 = reference_count;"
+    },
+    {
+        "type": "multi_ran_filtering_ofo",
+        "focus": "author_count",
+        "sql": "SELECT author_count FROM articles WHERE reference_count / 5 = title_word_count;"
+    },
+    {
+        "type": "multi_ran_filtering_ofo",
+        "focus": "author_count",
+        "sql": "SELECT author_count FROM articles WHERE reference_count / 20 = author_count;"
+    },
+    {
+        "type": "multi_ran_filtering_ofo",
+        "focus": "author_count",
+        "sql": "SELECT author_count FROM articles WHERE reference_count % 2 = 0;"
+    },
+    {
+        "type": "multi_ran_filtering_ofo",
+        "focus": "author_count",
+        "sql": "SELECT author_count FROM articles WHERE title_word_count % 2 = 1;"
+    },
+    {
+        "type": "multi_ran_filtering_ofo",
+        "focus": "author_count",
+        "sql": "SELECT author_count FROM articles WHERE author_count + 50 = reference_count AND title_word_count * 10 = reference_count;"
+    },
+    {
+        "type": "multi_ran_filtering_ofo",
+        "focus": "author_count",
+        "sql": "SELECT author_count FROM articles WHERE author_count + 50 = reference_count AND NOT title_word_count / 2 = author_count;"
+    },
+    {
+        "type": "multi_ran_filtering_ofo",
+        "focus": "author_count",
+        "sql": "SELECT author_count FROM articles WHERE author_count + 50 = reference_count OR title_word_count / 2 = author_count;"
+    },
+    {
+        "type": "multi_ran_filtering_ofo",
+        "focus": "author_count",
+        "sql": "SELECT author_count FROM articles WHERE author_count BETWEEN 2 AND 5;"
+    },
+    {
+        "type": "multi_ran_filtering_ofo",
+        "focus": "author_count",
+        "sql": "SELECT author_count FROM articles WHERE reference_count BETWEEN 50 AND 100;"
+    },
+    {
+        "type": "multi_ran_filtering_ofo",
+        "focus": "author_count",
+        "sql": "SELECT author_count FROM articles WHERE title_word_count IN (5, 10);"
+    },
+    {
+        "type": "multi_ran_filtering_ofo",
+        "focus": "author_list",
+        "sql": "SELECT author_name FROM article_author WHERE author_position % 2 = 1;"
+    },
+    {
+        "type": "multi_ran_filtering_ofo",
+        "focus": "author_list",
+        "sql": "SELECT author_name FROM article_author WHERE author_position % 2 = 0;"
+    },
+    {
+        "type": "multi_ran_filtering_ofo",
+        "focus": "author_list",
+        "sql": "SELECT author_name FROM article_author WHERE author_position BETWEEN 0 AND 3;"
+    },
+    {
+        "type": "multi_ran_filtering_ofo",
+        "focus": "author_list",
+        "sql": "SELECT author_name FROM article_author WHERE author_position IN (0, 2);"
+    },
+    {
+        "type": "multi_ran_filtering_ofo",
+        "focus": "reference_count",
+        "sql": "SELECT reference_count FROM articles WHERE author_count + 50 = reference_count;"
+    },
+    {
+        "type": "multi_ran_filtering_ofo",
+        "focus": "reference_count",
+        "sql": "SELECT reference_count FROM articles WHERE reference_count - author_count = 40;"
+    },
+    {
+        "type": "multi_ran_filtering_ofo",
+        "focus": "reference_count",
+        "sql": "SELECT reference_count FROM articles WHERE title_word_count * 10 = reference_count;"
+    },
+    {
+        "type": "multi_ran_filtering_ofo",
+        "focus": "reference_count",
+        "sql": "SELECT reference_count FROM articles WHERE reference_count / 5 = title_word_count;"
+    },
+    {
+        "type": "multi_ran_filtering_ofo",
+        "focus": "reference_count",
+        "sql": "SELECT reference_count FROM articles WHERE reference_count / 20 = author_count;"
+    },
+    {
+        "type": "multi_ran_filtering_ofo",
+        "focus": "reference_count",
+        "sql": "SELECT reference_count FROM articles WHERE reference_count % 2 = 0;"
+    },
+    {
+        "type": "multi_ran_filtering_ofo",
+        "focus": "reference_count",
+        "sql": "SELECT reference_count FROM articles WHERE title_word_count % 2 = 1;"
+    },
+    {
+        "type": "multi_ran_filtering_ofo",
+        "focus": "reference_count",
+        "sql": "SELECT reference_count FROM articles WHERE author_count + 50 = reference_count AND title_word_count * 10 = reference_count;"
+    },
+    {
+        "type": "multi_ran_filtering_ofo",
+        "focus": "reference_count",
+        "sql": "SELECT reference_count FROM articles WHERE author_count + 50 = reference_count AND NOT title_word_count / 2 = author_count;"
+    },
+    {
+        "type": "multi_ran_filtering_ofo",
+        "focus": "reference_count",
+        "sql": "SELECT reference_count FROM articles WHERE author_count + 50 = reference_count OR title_word_count / 2 = author_count;"
+    },
+    {
+        "type": "multi_ran_filtering_ofo",
+        "focus": "reference_count",
+        "sql": "SELECT reference_count FROM articles WHERE author_count BETWEEN 2 AND 5;"
+    },
+    {
+        "type": "multi_ran_filtering_ofo",
+        "focus": "reference_count",
+        "sql": "SELECT reference_count FROM articles WHERE reference_count BETWEEN 50 AND 100;"
+    },
+    {
+        "type": "multi_ran_filtering_ofo",
+        "focus": "reference_count",
+        "sql": "SELECT reference_count FROM articles WHERE title_word_count IN (5, 10);"
+    },
+    {
+        "type": "multi_ran_filtering_ofo",
+        "focus": "title_word_count",
+        "sql": "SELECT title_word_count FROM articles WHERE author_count + 50 = reference_count;"
+    },
+    {
+        "type": "multi_ran_filtering_ofo",
+        "focus": "title_word_count",
+        "sql": "SELECT title_word_count FROM articles WHERE reference_count - author_count = 40;"
+    },
+    {
+        "type": "multi_ran_filtering_ofo",
+        "focus": "title_word_count",
+        "sql": "SELECT title_word_count FROM articles WHERE title_word_count * 10 = reference_count;"
+    },
+    {
+        "type": "multi_ran_filtering_ofo",
+        "focus": "title_word_count",
+        "sql": "SELECT title_word_count FROM articles WHERE reference_count / 5 = title_word_count;"
+    },
+    {
+        "type": "multi_ran_filtering_ofo",
+        "focus": "title_word_count",
+        "sql": "SELECT title_word_count FROM articles WHERE reference_count / 20 = author_count;"
+    },
+    {
+        "type": "multi_ran_filtering_ofo",
+        "focus": "title_word_count",
+        "sql": "SELECT title_word_count FROM articles WHERE reference_count % 2 = 0;"
+    },
+    {
+        "type": "multi_ran_filtering_ofo",
+        "focus": "title_word_count",
+        "sql": "SELECT title_word_count FROM articles WHERE title_word_count % 2 = 1;"
+    },
+    {
+        "type": "multi_ran_filtering_ofo",
+        "focus": "title_word_count",
+        "sql": "SELECT title_word_count FROM articles WHERE author_count + 50 = reference_count AND title_word_count * 10 = reference_count;"
+    },
+    {
+        "type": "multi_ran_filtering_ofo",
+        "focus": "title_word_count",
+        "sql": "SELECT title_word_count FROM articles WHERE author_count + 50 = reference_count AND NOT title_word_count / 2 = author_count;"
+    },
+    {
+        "type": "multi_ran_filtering_ofo",
+        "focus": "title_word_count",
+        "sql": "SELECT title_word_count FROM articles WHERE author_count + 50 = reference_count OR title_word_count / 2 = author_count;"
+    },
+    {
+        "type": "multi_ran_filtering_ofo",
+        "focus": "title_word_count",
+        "sql": "SELECT title_word_count FROM articles WHERE author_count BETWEEN 2 AND 5;"
+    },
+    {
+        "type": "multi_ran_filtering_ofo",
+        "focus": "title_word_count",
+        "sql": "SELECT title_word_count FROM articles WHERE reference_count BETWEEN 50 AND 100;"
+    },
+    {
+        "type": "multi_ran_filtering_ofo",
+        "focus": "title_word_count",
+        "sql": "SELECT title_word_count FROM articles WHERE title_word_count IN (5, 10);"
+    }
+]

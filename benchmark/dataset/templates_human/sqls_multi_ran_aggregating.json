@@ -1,0 +1,102 @@
+[
+    {
+        "type": "multi_ran_aggregating",
+        "focus": "author_count",
+        "sql": "SELECT COUNT(*) FROM articles;"
+    },
+    {
+        "type": "multi_ran_aggregating",
+        "focus": "author_count",
+        "sql": "SELECT MIN(author_count) FROM articles;"
+    },
+    {
+        "type": "multi_ran_aggregating",
+        "focus": "author_count",
+        "sql": "SELECT MAX(author_count) FROM articles;"
+    },
+    {
+        "type": "multi_ran_aggregating",
+        "focus": "author_count",
+        "sql": "SELECT SUM(author_count) FROM articles;"
+    },
+    {
+        "type": "multi_ran_aggregating",
+        "focus": "author_count",
+        "sql": "SELECT AVG(author_count) FROM articles;"
+    },
+    {
+        "type": "multi_ran_aggregating",
+        "focus": "author_count",
+        "sql": "SELECT DISTINCT author_count FROM articles;"
+    },
+    {
+        "type": "multi_ran_aggregating",
+        "focus": "author_list",
+        "sql": "SELECT DISTINCT author_name FROM article_author;"
+    },
+    {
+        "type": "multi_ran_aggregating",
+        "focus": "author_count",
+        "sql": "SELECT author_count, COUNT(*) FROM articles GROUP BY author_count;"
+    },
+    {
+        "type": "multi_ran_aggregating",
+        "focus": "author_list",
+        "sql": "SELECT COUNT(DISTINCT author_name) FROM article_author;"
+    },
+    {
+        "type": "multi_ran_aggregating",
+        "focus": "reference_count",
+        "sql": "SELECT MIN(reference_count) FROM articles;"
+    },
+    {
+        "type": "multi_ran_aggregating",
+        "focus": "reference_count",
+        "sql": "SELECT MAX(reference_count) FROM articles;"
+    },
+    {
+        "type": "multi_ran_aggregating",
+        "focus": "reference_count",
+        "sql": "SELECT SUM(reference_count) FROM articles;"
+    },
+    {
+        "type": "multi_ran_aggregating",
+        "focus": "reference_count",
+        "sql": "SELECT AVG(reference_count) FROM articles;"
+    },
+    {
+        "type": "multi_ran_aggregating",
+        "focus": "reference_count",
+        "sql": "SELECT reference_count, COUNT(*) FROM articles GROUP BY reference_count;"
+    },
+    {
+        "type": "multi_ran_aggregating",
+        "focus": "title_entire",
+        "sql": "SELECT DISTINCT article_title FROM articles;"
+    },
+    {
+        "type": "multi_ran_aggregating",
+        "focus": "title_word_count",
+        "sql": "SELECT MIN(title_word_count) FROM articles;"
+    },
+    {
+        "type": "multi_ran_aggregating",
+        "focus": "title_word_count",
+        "sql": "SELECT MAX(title_word_count) FROM articles;"
+    },
+    {
+        "type": "multi_ran_aggregating",
+        "focus": "title_word_count",
+        "sql": "SELECT SUM(title_word_count) FROM articles;"
+    },
+    {
+        "type": "multi_ran_aggregating",
+        "focus": "title_word_count",
+        "sql": "SELECT AVG(title_word_count) FROM articles;"
+    },
+    {
+        "type": "multi_ran_aggregating",
+        "focus": "title_word_count",
+        "sql": "SELECT title_word_count, COUNT(*) FROM articles GROUP BY title_word_count;"
+    }
+]

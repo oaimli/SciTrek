@@ -1,0 +1,102 @@
+[
+    {
+        "type": "multi_graph_filtering",
+        "focus": "author_relationship",
+        "sql": "SELECT COUNT(DISTINCT article_id) FROM article_author WHERE author_name = {author-name};"
+    },
+    {
+        "type": "multi_graph_filtering",
+        "focus": "author_relationship",
+        "sql": "SELECT article_title FROM articles WHERE article_id IN (SELECT DISTINCT article_id FROM article_author WHERE author_name = {author-name});"
+    },
+    {
+        "type": "multi_graph_filtering",
+        "focus": "author_relationship",
+        "sql": "SELECT MIN(author_count) FROM articles WHERE article_id IN (SELECT DISTINCT article_id FROM article_author WHERE author_name = {author-name});"
+    },
+    {
+        "type": "multi_graph_filtering",
+        "focus": "author_relationship",
+        "sql": "SELECT MAX(reference_count) FROM articles WHERE article_id IN (SELECT DISTINCT article_id FROM article_author WHERE author_name = {author-name});"
+    },
+    {
+        "type": "multi_graph_filtering",
+        "focus": "author_relationship",
+        "sql": "SELECT COUNT(DISTINCT article_id) FROM article_author WHERE author_name = {author-name} AND author_position = 0;"
+    },
+    {
+        "type": "multi_graph_filtering",
+        "focus": "author_relationship",
+        "sql": "SELECT article_title FROM articles WHERE article_id IN (SELECT DISTINCT article_id FROM article_author WHERE author_name = {author-name} AND author_position = 0);"
+    },
+    {
+        "type": "multi_graph_filtering",
+        "focus": "author_relationship",
+        "sql": "SELECT AVG(author_count) FROM articles WHERE article_id IN (SELECT DISTINCT article_id FROM article_author WHERE author_name = {author-name} AND author_position = 0);"
+    },
+    {
+        "type": "multi_graph_filtering",
+        "focus": "author_relationship",
+        "sql": "SELECT SUM(title_word_count) FROM articles WHERE article_id IN (SELECT DISTINCT article_id FROM article_author WHERE author_name = {author-name} AND author_position = 0);"
+    },
+    {
+        "type": "multi_graph_filtering",
+        "focus": "author_relationship",
+        "sql": "SELECT DISTINCT author_name FROM article_author WHERE article_id IN (SELECT DISTINCT article_id FROM articles WHERE title_word_count = {title-word-count});"
+    },
+    {
+        "type": "multi_graph_filtering",
+        "focus": "author_relationship",
+        "sql": "SELECT DISTINCT author_name FROM article_author WHERE article_id IN (SELECT DISTINCT article_id from articles) AND article_id NOT IN (SELECT DISTINCT article_id_cited from citing_cited);"
+    },
+    {
+        "type": "multi_graph_filtering",
+        "focus": "citation_relationship",
+        "sql": "SELECT article_title FROM articles WHERE article_id IN (SELECT article_id_cited FROM citing_cited GROUP BY article_id_cited HAVING COUNT(*) = (SELECT MAX(citation_count) FROM (SELECT COUNT(*) AS citation_count FROM citing_cited GROUP BY article_id_cited)))"
+    },
+    {
+        "type": "multi_graph_filtering",
+        "focus": "citation_relationship",
+        "sql": "SELECT reference_count FROM articles WHERE article_id IN (SELECT article_id_cited FROM citing_cited GROUP BY article_id_cited HAVING COUNT(*) = (SELECT MAX(citation_count) FROM (SELECT COUNT(*) AS citation_count FROM citing_cited GROUP BY article_id_cited)))"
+    },
+    {
+        "type": "multi_graph_filtering",
+        "focus": "citation_relationship",
+        "sql": "SELECT author_count FROM articles WHERE article_id IN (SELECT article_id_cited FROM citing_cited GROUP BY article_id_cited HAVING COUNT(*) = (SELECT MAX(citation_count) FROM (SELECT COUNT(*) AS citation_count FROM citing_cited GROUP BY article_id_cited)))"
+    },
+    {
+        "type": "multi_graph_filtering",
+        "focus": "citation_relationship",
+        "sql": "SELECT COUNT(*) FROM (SELECT article_id_cited FROM citing_cited GROUP BY article_id_cited HAVING COUNT(*) = 1) AS once_cited"
+    },
+    {
+        "type": "multi_graph_filtering",
+        "focus": "citation_relationship",
+        "sql": "SELECT COUNT(*) FROM articles WHERE article_id NOT IN (SELECT article_id_cited FROM citing_cited);"
+    },
+    {
+        "type": "multi_graph_filtering",
+        "focus": "citation_relationship",
+        "sql": "SELECT AVG(citation_count) FROM (SELECT COUNT(*) AS citation_count FROM citing_cited GROUP BY article_id_cited) AS citation_stats;"
+    },
+    {
+        "type": "multi_graph_filtering",
+        "focus": "citation_relationship",
+        "sql": "SELECT article_title FROM articles WHERE article_id IN (SELECT article_id FROM articles WHERE article_id NOT IN (SELECT article_id_cited FROM citing_cited));"
+    },
+    {
+        "type": "multi_graph_filtering",
+        "focus": "citation_relationship",
+        "sql": "SELECT reference_count FROM articles WHERE article_id IN (SELECT article_id FROM articles WHERE article_id NOT IN (SELECT article_id_cited FROM citing_cited));"
+    },
+    {
+        "type": "multi_graph_filtering",
+        "focus": "citation_relationship",
+        "sql": "SELECT author_count FROM articles WHERE article_id IN (SELECT article_id FROM articles WHERE article_id NOT IN (SELECT article_id_cited FROM citing_cited));"
+    },
+    {
+        "type": "multi_graph_filtering",
+        "focus": "citation_relationship",
+        "sql": "SELECT COUNT(*) FROM articles WHERE article_id NOT IN (SELECT article_id_citing FROM citing_cited) AND article_id IN (SELECT article_id_cited FROM citing_cited);"
+    }
+]

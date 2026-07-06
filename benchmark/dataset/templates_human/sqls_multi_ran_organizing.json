@@ -1,0 +1,137 @@
+[
+    {
+        "type": "multi_ran_organizing",
+        "focus": "author_count",
+        "sql": "SELECT author_count FROM articles ORDER BY author_count DESC;"
+    },
+    {
+        "type": "multi_ran_organizing",
+        "focus": "author_count",
+        "sql": "SELECT author_count FROM articles ORDER BY author_count ASC;"
+    },
+    {
+        "type": "multi_ran_organizing",
+        "focus": "author_count",
+        "sql": "SELECT author_count FROM articles ORDER BY reference_count DESC;"
+    },
+    {
+        "type": "multi_ran_organizing",
+        "focus": "author_count",
+        "sql": "SELECT author_count FROM articles ORDER BY reference_count ASC;"
+    },
+    {
+        "type": "multi_ran_organizing",
+        "focus": "author_count",
+        "sql": "SELECT author_count FROM articles ORDER BY title_word_count DESC;"
+    },
+    {
+        "type": "multi_ran_organizing",
+        "focus": "author_count",
+        "sql": "SELECT author_count FROM articles ORDER BY title_word_count ASC;"
+    },
+    {
+        "type": "multi_ran_organizing",
+        "focus": "author_count",
+        "sql": "SELECT author_count FROM articles GROUP BY author_count;"
+    },
+    {
+        "type": "multi_ran_organizing",
+        "focus": "reference_count",
+        "sql": "SELECT reference_count FROM articles ORDER BY author_count DESC;"
+    },
+    {
+        "type": "multi_ran_organizing",
+        "focus": "reference_count",
+        "sql": "SELECT reference_count FROM articles ORDER BY author_count ASC;"
+    },
+    {
+        "type": "multi_ran_organizing",
+        "focus": "reference_count",
+        "sql": "SELECT reference_count FROM articles ORDER BY reference_count DESC;"
+    },
+    {
+        "type": "multi_ran_organizing",
+        "focus": "reference_count",
+        "sql": "SELECT reference_count FROM articles ORDER BY reference_count ASC;"
+    },
+    {
+        "type": "multi_ran_organizing",
+        "focus": "reference_count",
+        "sql": "SELECT reference_count FROM articles ORDER BY title_word_count DESC;"
+    },
+    {
+        "type": "multi_ran_organizing",
+        "focus": "reference_count",
+        "sql": "SELECT reference_count FROM articles ORDER BY title_word_count ASC;"
+    },
+    {
+        "type": "multi_ran_organizing",
+        "focus": "reference_count",
+        "sql": "SELECT reference_count FROM articles GROUP BY reference_count;"
+    },
+    {
+        "type": "multi_ran_organizing",
+        "focus": "title_entire",
+        "sql": "SELECT article_title FROM articles ORDER BY author_count DESC;"
+    },
+    {
+        "type": "multi_ran_organizing",
+        "focus": "title_entire",
+        "sql": "SELECT article_title FROM articles ORDER BY author_count ASC;"
+    },
+    {
+        "type": "multi_ran_organizing",
+        "focus": "title_entire",
+        "sql": "SELECT article_title FROM articles ORDER BY reference_count DESC;"
+    },
+    {
+        "type": "multi_ran_organizing",
+        "focus": "title_entire",
+        "sql": "SELECT article_title FROM articles ORDER BY reference_count ASC;"
+    },
+    {
+        "type": "multi_ran_organizing",
+        "focus": "title_entire",
+        "sql": "SELECT article_title FROM articles ORDER BY title_word_count DESC;"
+    },
+    {
+        "type": "multi_ran_organizing",
+        "focus": "title_entire",
+        "sql": "SELECT article_title FROM articles ORDER BY title_word_count ASC;"
+    },
+    {
+        "type": "multi_ran_organizing",
+        "focus": "title_word_count",
+        "sql": "SELECT title_word_count FROM articles ORDER BY author_count DESC;"
+    },
+    {
+        "type": "multi_ran_organizing",
+        "focus": "title_word_count",
+        "sql": "SELECT title_word_count FROM articles ORDER BY author_count ASC;"
+    },
+    {
+        "type": "multi_ran_organizing",
+        "focus": "title_word_count",
+        "sql": "SELECT title_word_count FROM articles ORDER BY reference_count DESC;"
+    },
+    {
+        "type": "multi_ran_organizing",
+        "focus": "title_word_count",
+        "sql": "SELECT title_word_count FROM articles ORDER BY reference_count ASC;"
+    },
+    {
+        "type": "multi_ran_organizing",
+        "focus": "title_word_count",
+        "sql": "SELECT title_word_count FROM articles ORDER BY title_word_count DESC;"
+    },
+    {
+        "type": "multi_ran_organizing",
+        "focus": "title_word_count",
+        "sql": "SELECT title_word_count FROM articles ORDER BY title_word_count ASC;"
+    },
+    {
+        "type": "multi_ran_organizing",
+        "focus": "title_word_count",
+        "sql": "SELECT title_word_count, COUNT(*) FROM articles GROUP BY title_word_count;"
+    }
+]

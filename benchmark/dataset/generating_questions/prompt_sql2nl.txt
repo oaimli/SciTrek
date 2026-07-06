@@ -1,0 +1,35 @@
+You are given a database with three tables: articles, citing_cited, and article_author.
+
+The articles table contains the following columns:
+- article_id (String): the unique identifier of the article;
+- article_title (String): the title of the article;
+- title_word_count (Integer): the number of words in the article's title;
+- author_count (Integer): the number of authors for the article;
+- reference_count (Integer): the number of references cited in the article.
+
+The citing_cited table contains the following columns:
+- relation_id (String): the unique identifier of the citation relationship between two articles;
+- article_id_citing (String): the identifier of the article which cites the other article;
+- article_id_cited (String): the identifier of the article which is cited by the other article.
+
+The article_author table contains the following columns:
+- relation_id (String): the unique identifier of the article-author relationship;
+- article_id (String): the identifier of the associated article;
+- author_name (String): the name of the author;
+- author_position (Integer): the position of the author in the author list (starting from 0 for the first author).
+
+Assumptions:
+- The articles table contains multiple entries;
+- The article_author table maps authors to articles, where one author can contribute to multiple articles, and one article can have multiple authors;
+- The citing_cited table represents citation relationships among articles in the articles table, where one article can be cited by multiple others.
+
+Your task involves two steps:
+1. Understand the given SQL query in the context of the database schema described above;
+2. Convert the SQL query into a clear and natural-sounding question in everyday language, as if you were reading textual articles rather than querying a database.
+
+The given SQL query:
+<SQL_QUERY>
+
+Do not refer to relation_id or article_id in the natural-language question.
+You must output the SQL query and the corresponding question in the following JSON format, and do not include any extra text:
+{"sql": "the given SQL query", "question": "the generated question"}

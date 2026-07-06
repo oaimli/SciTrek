@@ -1,0 +1,27 @@
+[
+    {
+        "type": "multi_simple",
+        "focus": "author_count",
+        "sql": "SELECT author_count FROM articles;"
+    },
+    {
+        "type": "multi_simple",
+        "focus": "author_list",
+        "sql": "SELECT author_name FROM article_author;"
+    },
+    {
+        "type": "multi_simple",
+        "focus": "reference_count",
+        "sql": "SELECT reference_count FROM articles;"
+    },
+    {
+        "type": "multi_simple",
+        "focus": "title_entire",
+        "sql": "SELECT article_title FROM articles;"
+    },
+    {
+        "type": "multi_simple",
+        "focus": "title_word_count",
+        "sql": "SELECT title_word_count FROM articles;"
+    }
+]

@@ -1,0 +1,29 @@
+SELECT
+DISTINCT
+MIN
+MAX
+COUNT
+SUM
+AVG
+ORDER BY
+ASC
+DESC
+GROUP BY
+WHERE
+LIKE
+=
+>
+<
+>=
+<=
+<>
++
+-
+*
+/
+%
+AND
+NOT
+OR
+BETWEEN
+IN
