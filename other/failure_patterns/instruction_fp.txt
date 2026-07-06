@@ -1,0 +1,7 @@
+You are given some experimental results in the following JSON.
+
+<data>
+
+There are multiple questions in the JSON. For each question, there are model answers and a ground truth answer.
+
+Your task is to analyze the model answers to find the general failure patterns of the models.
