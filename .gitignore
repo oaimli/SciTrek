@@ -5,6 +5,9 @@ __MACOSX/
 /benchmark/md_marker/
 /benchmark/md_gemini/
 /benchmark/dataset/samples/final/
+/benchmark/dataset/samples/gpt41/
+/benchmark/dataset/samples/init/
+/benchmark/dataset/samples/qwen25/
 /benchmark/dataset/clusters/*.jsonl
 /benchmark/human/prolific/annotations/
 /benchmark/human/prolific/analysis/
