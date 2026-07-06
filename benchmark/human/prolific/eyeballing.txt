@@ -1,0 +1,1110 @@
+
+############################# Sample ID 63 #################################
+SQL type: multi_graph_filtering
+Question: What is the average number of authors for articles where Feng-Yang Chen is listed as the first author?
+SQL query: SELECT AVG(author_count) FROM articles WHERE article_id IN (SELECT DISTINCT article_id FROM article_author WHERE author_name = 'Feng-Yang Chen' AND author_position = 0);
+Answer: NULL
+67f1865fd01a13d73235b647: 5
+65250c54bcd24a2fcf5ee728: 9
+5d0d16d991270800010b7dd7: NULL
+Aligned: 1/3, Agreed: 0/1
+
+*******The table of articles*******
+article_id, article_title, title_word_count, author_count, reference_count
+13a3f6bbc70ebfec50db01c4b985d7db289ecc28, Nitrate electroreduction: mechanism insight, in situ characterization, performance evaluation, and challenges., 11, 5, 50
+7fbe06df45fbd1c6041f741ac4d735ba60d6b265, Cooperative Cu with defective MXene for enhanced nitrate electroreduction to ammonia, 11, 10, 51
+9f351065392554526308afa8b0a416fa21202457, Active hydrogen boosts electrochemical nitrate reduction to ammonia, 8, 8, 62
+7ce95a1efd01ddc42727c68835ca74b63c2226f5, Electrochemical ammonia synthesis via nitrate reduction on Fe single atom catalyst, 11, 19, 72
+
+*******The table of article-author relationship*******
+article_id, author_name, author_position
+13a3f6bbc70ebfec50db01c4b985d7db289ecc28, Yuting Wang, 0
+13a3f6bbc70ebfec50db01c4b985d7db289ecc28, Changhong Wang, 1
+13a3f6bbc70ebfec50db01c4b985d7db289ecc28, Mengyang Li, 2
+13a3f6bbc70ebfec50db01c4b985d7db289ecc28, Yifu Yu, 3
+13a3f6bbc70ebfec50db01c4b985d7db289ecc28, Bin Zhang, 4
+7fbe06df45fbd1c6041f741ac4d735ba60d6b265, Yi Tan, 0
+7fbe06df45fbd1c6041f741ac4d735ba60d6b265, Yijin Zhao, 1
+7fbe06df45fbd1c6041f741ac4d735ba60d6b265, Xiaokang Chen, 2
+7fbe06df45fbd1c6041f741ac4d735ba60d6b265, Shengliang Zhai, 3
+7fbe06df45fbd1c6041f741ac4d735ba60d6b265, Xiao Wang, 4
+7fbe06df45fbd1c6041f741ac4d735ba60d6b265, Le Su, 5
+7fbe06df45fbd1c6041f741ac4d735ba60d6b265, Hongyan Yang, 6
+7fbe06df45fbd1c6041f741ac4d735ba60d6b265, Wei-Qiao Deng, 7
+7fbe06df45fbd1c6041f741ac4d735ba60d6b265, Ghim Wei Ho, 8
+7fbe06df45fbd1c6041f741ac4d735ba60d6b265, Hao Wu, 9
+9f351065392554526308afa8b0a416fa21202457, Kui Fan, 0
+9f351065392554526308afa8b0a416fa21202457, Wenfu Xie, 1
+9f351065392554526308afa8b0a416fa21202457, Jinze Li, 2
+9f351065392554526308afa8b0a416fa21202457, Yining Sun, 3
+9f351065392554526308afa8b0a416fa21202457, Pengcheng Xu, 4
+9f351065392554526308afa8b0a416fa21202457, Yang Tang, 5
+9f351065392554526308afa8b0a416fa21202457, Zhenhua Li, 6
+9f351065392554526308afa8b0a416fa21202457, Mingfei Shao, 7
+7ce95a1efd01ddc42727c68835ca74b63c2226f5, Zhen-Yu Wu, 0
+7ce95a1efd01ddc42727c68835ca74b63c2226f5, Mohammadreza Karamad, 1
+7ce95a1efd01ddc42727c68835ca74b63c2226f5, Xue Yong, 2
+7ce95a1efd01ddc42727c68835ca74b63c2226f5, Qizheng Huang, 3
+7ce95a1efd01ddc42727c68835ca74b63c2226f5, David A. Cullen, 4
+7ce95a1efd01ddc42727c68835ca74b63c2226f5, Peng Zhu, 5
+7ce95a1efd01ddc42727c68835ca74b63c2226f5, Chuan Xia, 6
+7ce95a1efd01ddc42727c68835ca74b63c2226f5, Qunfeng Xiao, 7
+7ce95a1efd01ddc42727c68835ca74b63c2226f5, Mohsen Shakouri, 8
+7ce95a1efd01ddc42727c68835ca74b63c2226f5, Feng-Yang Chen, 9
+7ce95a1efd01ddc42727c68835ca74b63c2226f5, Jung Yoon (Timothy) Kim, 10
+7ce95a1efd01ddc42727c68835ca74b63c2226f5, Yang Xia, 11
+7ce95a1efd01ddc42727c68835ca74b63c2226f5, Kimberly Heck, 12
+7ce95a1efd01ddc42727c68835ca74b63c2226f5, Yongfeng Hu, 13
+7ce95a1efd01ddc42727c68835ca74b63c2226f5, Michael S. Wong, 14
+7ce95a1efd01ddc42727c68835ca74b63c2226f5, Qilin Li, 15
+7ce95a1efd01ddc42727c68835ca74b63c2226f5, Ian Gates, 16
+7ce95a1efd01ddc42727c68835ca74b63c2226f5, Samira Siahrostami, 17
+7ce95a1efd01ddc42727c68835ca74b63c2226f5, Haotian Wang, 18
+
+*******The table of citation relationship among the articles*******
+article_id_citing, article_id_cited
+7fbe06df45fbd1c6041f741ac4d735ba60d6b265, 9f351065392554526308afa8b0a416fa21202457
+7fbe06df45fbd1c6041f741ac4d735ba60d6b265, 13a3f6bbc70ebfec50db01c4b985d7db289ecc28
+9f351065392554526308afa8b0a416fa21202457, 13a3f6bbc70ebfec50db01c4b985d7db289ecc28
+9f351065392554526308afa8b0a416fa21202457, 7ce95a1efd01ddc42727c68835ca74b63c2226f5
+
+############################# Sample ID 89 #################################
+SQL type: multi_ran_filtering_ofo
+Question: What is the word count of the titles of articles that have between 2 and 5 authors?
+SQL query: SELECT title_word_count FROM articles WHERE author_count BETWEEN 2 AND 5;
+Answer: 9, 7
+5737270f14f69e000d7bc08a: 7, 9
+65ccfdf16bdcab83d5bd1163: 16
+67659224c577c7e97b074f43: 7
+Aligned: 1/3, Agreed: 0/1
+
+*******The table of articles*******
+article_id, article_title, title_word_count, author_count, reference_count
+a61d8cf0e7824e1c7624654a0592839ee8b336ef, High-Yield Production of High-k/Metal Gate Nanopattern Array for 2D Devices via Oxidation-Assisted Etching Approach, 14, 8, 14
+c0c3e2873159ed15120b490d8807677168ec4aa2, Learning about physical parameters: the importance of model discrepancy, 9, 2, 29
+369bab93e123cf274c4eaee416f13f0ee5fce585, Fast detection, a precise and sensitive diagnostic agent for breast cancer, 11, 10, 48
+4941e56b145a3b7719766916cc9a65940cdb55b2, A microprocessor based on a two-dimensional semiconductor, 7, 4, 32
+
+*******The table of article-author relationship*******
+article_id, author_name, author_position
+a61d8cf0e7824e1c7624654a0592839ee8b336ef, Weida Hong, 0
+a61d8cf0e7824e1c7624654a0592839ee8b336ef, Jiejun Zhang, 1
+a61d8cf0e7824e1c7624654a0592839ee8b336ef, Daobing Zeng, 2
+a61d8cf0e7824e1c7624654a0592839ee8b336ef, Chen Wang, 3
+a61d8cf0e7824e1c7624654a0592839ee8b336ef, Zhongying Xue, 4
+a61d8cf0e7824e1c7624654a0592839ee8b336ef, Miao Zhang, 5
+a61d8cf0e7824e1c7624654a0592839ee8b336ef, Ziao Tian, 6
+a61d8cf0e7824e1c7624654a0592839ee8b336ef, Zengfeng Di, 7
+c0c3e2873159ed15120b490d8807677168ec4aa2, Jenný Brynjarsdóttir, 0
+c0c3e2873159ed15120b490d8807677168ec4aa2, Anthony O'Hagan, 1
+369bab93e123cf274c4eaee416f13f0ee5fce585, Qiong Wu, 0
+369bab93e123cf274c4eaee416f13f0ee5fce585, Chanling Yuan, 1
+369bab93e123cf274c4eaee416f13f0ee5fce585, Ningzhi Liu, 2
+369bab93e123cf274c4eaee416f13f0ee5fce585, Jing Shu, 3
+369bab93e123cf274c4eaee416f13f0ee5fce585, Jiacheng Wang, 4
+369bab93e123cf274c4eaee416f13f0ee5fce585, Jiayi Qian, 5
+369bab93e123cf274c4eaee416f13f0ee5fce585, Liang Zeng, 6
+369bab93e123cf274c4eaee416f13f0ee5fce585, Hao Zhang, 7
+369bab93e123cf274c4eaee416f13f0ee5fce585, Xicheng Wang, 8
+369bab93e123cf274c4eaee416f13f0ee5fce585, Wenjie Mei, 9
+4941e56b145a3b7719766916cc9a65940cdb55b2, Stefan Wachter, 0
+4941e56b145a3b7719766916cc9a65940cdb55b2, Dmitry K. Polyushkin, 1
+4941e56b145a3b7719766916cc9a65940cdb55b2, Ole Bethge, 2
+4941e56b145a3b7719766916cc9a65940cdb55b2, Thomas Mueller, 3
+
+*******The table of citation relationship among the articles*******
+article_id_citing, article_id_cited
+
+############################# Sample ID 146 #################################
+SQL type: multi_graph_filtering
+Question: What is the average number of times articles are cited by other articles?
+SQL query: SELECT AVG(citation_count) FROM (SELECT COUNT(*) AS citation_count FROM citing_cited GROUP BY article_id_cited) AS citation_stats;
+Answer: 1.6666666666666667
+62e33513e972718797c9aaeb: 1.25
+62ad02acebe626b61f16d620: 1.25
+5730ea54dd66170008d9af15: 1
+Aligned: 0/3, Agreed: 1/1
+
+*******The table of articles*******
+article_id, article_title, title_word_count, author_count, reference_count
+78156e7d0542b658c04e6f50f753f948e17e9088, Modern Bayesian Experimental Design, 4, 4, 171
+0e6b93760b36152b8f7e732ac1a9e9100058dac7, Bayesian Design of Experiments Using Approximate Coordinate Exchange, 8, 2, 39
+e90ff29cc81016ae6fdb116a25b71c45bebc37dc, Bayesian-Optimal Design via Interacting Particle Systems, 6, 4, 40
+0f0f75ff4607096bc0c3637d68cfd5b0076a9a45, Deep Adaptive Design: Amortizing Sequential Bayesian Experimental Design, 8, 4, 63
+
+*******The table of article-author relationship*******
+article_id, author_name, author_position
+78156e7d0542b658c04e6f50f753f948e17e9088, Tom Rainforth, 0
+78156e7d0542b658c04e6f50f753f948e17e9088, Adam Foster, 1
+78156e7d0542b658c04e6f50f753f948e17e9088, Desi R Ivanova, 2
+78156e7d0542b658c04e6f50f753f948e17e9088, Freddie Bickford Smith, 3
+0e6b93760b36152b8f7e732ac1a9e9100058dac7, Antony M. Overstall, 0
+0e6b93760b36152b8f7e732ac1a9e9100058dac7, David C. Woods, 1
+e90ff29cc81016ae6fdb116a25b71c45bebc37dc, Billy Amzal, 0
+e90ff29cc81016ae6fdb116a25b71c45bebc37dc, Frédéric Y Bois, 1
+e90ff29cc81016ae6fdb116a25b71c45bebc37dc, Eric Parent, 2
+e90ff29cc81016ae6fdb116a25b71c45bebc37dc, Christian P Robert, 3
+0f0f75ff4607096bc0c3637d68cfd5b0076a9a45, Adam Foster, 0
+0f0f75ff4607096bc0c3637d68cfd5b0076a9a45, Desi R. Ivanova, 1
+0f0f75ff4607096bc0c3637d68cfd5b0076a9a45, Ilyas Malik, 2
+0f0f75ff4607096bc0c3637d68cfd5b0076a9a45, Tom Rainforth, 3
+
+*******The table of citation relationship among the articles*******
+article_id_citing, article_id_cited
+78156e7d0542b658c04e6f50f753f948e17e9088, 0f0f75ff4607096bc0c3637d68cfd5b0076a9a45
+78156e7d0542b658c04e6f50f753f948e17e9088, 0e6b93760b36152b8f7e732ac1a9e9100058dac7
+78156e7d0542b658c04e6f50f753f948e17e9088, e90ff29cc81016ae6fdb116a25b71c45bebc37dc
+0e6b93760b36152b8f7e732ac1a9e9100058dac7, e90ff29cc81016ae6fdb116a25b71c45bebc37dc
+0f0f75ff4607096bc0c3637d68cfd5b0076a9a45, e90ff29cc81016ae6fdb116a25b71c45bebc37dc
+
+############################# Sample ID 91 #################################
+SQL type: multi_graph_filtering
+Question: Which article has the highest number of citations?
+SQL query: SELECT article_title FROM articles WHERE article_id IN (SELECT article_id_cited FROM citing_cited GROUP BY article_id_cited HAVING COUNT(*) = (SELECT MAX(citation_count) FROM (SELECT COUNT(*) AS citation_count FROM citing_cited GROUP BY article_id_cited)))
+Answer: Space-time-coding digital metasurfaces
+655f95ffd90905e27c938a49: Electrically Tunable Harmonics in Time-modulated Metasurfaces for Wavefront Engineering
+67e188720841b364cd463eaa: article_2
+5ffd392153021d20d0939515: Article 3
+Aligned: 0/3, Agreed: 0/1
+
+*******The table of articles*******
+article_id, article_title, title_word_count, author_count, reference_count
+039807a78af6720533528ada3c6074141d2f7907, Broadband continuous beam-steering with time-modulated metasurfaces in the near-infrared spectral regime, 11, 3, 60
+865983382d1394a7b49246a70cda947e97f18d84, Wireless Communications with Reconfigurable Intelligent Surface: Path Loss Modeling and Experimental Measurement, 12, 10, 47
+dc4ebdb47db84698be4947e9663ef04a8253867a, Space-time-coding digital metasurfaces, 3, 12, 42
+8c8c3c43d6e8dd89ca901f28db954e69ac5c31b8, Electrically Tunable Harmonics in Time-modulated Metasurfaces for Wavefront Engineering, 9, 3, 85
+ffbec5d34fcd1cabd0d3d3b225a50357c9ae05b1, A wireless communication scheme based on space- and frequency-division multiplexing using digital metasurfaces, 13, 9, 46
+4c27fb94f9ff2e507d6b90a458e93fb491b07892, Two-dimensional beam steering with tunable metasurface in infrared regime, 9, 8, 32
+
+*******The table of article-author relationship*******
+article_id, author_name, author_position
+039807a78af6720533528ada3c6074141d2f7907, Raana Sabri, 0
+039807a78af6720533528ada3c6074141d2f7907, Mohammad Mahdi Salary, 1
+039807a78af6720533528ada3c6074141d2f7907, Hossein Mosallaei, 2
+865983382d1394a7b49246a70cda947e97f18d84, Wankai Tang, 0
+865983382d1394a7b49246a70cda947e97f18d84, Ming Zheng Chen, 1
+865983382d1394a7b49246a70cda947e97f18d84, Xiangyu Chen, 2
+865983382d1394a7b49246a70cda947e97f18d84, Jun Yan Dai, 3
+865983382d1394a7b49246a70cda947e97f18d84, Yu Han, 4
+865983382d1394a7b49246a70cda947e97f18d84, Marco Di Renzo, 5
+865983382d1394a7b49246a70cda947e97f18d84, Yong Zeng, 6
+865983382d1394a7b49246a70cda947e97f18d84, Shi Jin, 7
+865983382d1394a7b49246a70cda947e97f18d84, Qiang Cheng, 8
+865983382d1394a7b49246a70cda947e97f18d84, Tie Jun Cui, 9
+dc4ebdb47db84698be4947e9663ef04a8253867a, Lei Zhang, 0
+dc4ebdb47db84698be4947e9663ef04a8253867a, Xiao Qing Chen, 1
+dc4ebdb47db84698be4947e9663ef04a8253867a, Shuo Liu, 2
+dc4ebdb47db84698be4947e9663ef04a8253867a, Qian Zhang, 3
+dc4ebdb47db84698be4947e9663ef04a8253867a, Jie Zhao, 4
+dc4ebdb47db84698be4947e9663ef04a8253867a, Jun Yan Dai, 5
+dc4ebdb47db84698be4947e9663ef04a8253867a, Guo Dong Bai, 6
+dc4ebdb47db84698be4947e9663ef04a8253867a, Xiang Wan, 7
+dc4ebdb47db84698be4947e9663ef04a8253867a, Qiang Cheng, 8
+dc4ebdb47db84698be4947e9663ef04a8253867a, Giuseppe Castaldi, 9
+dc4ebdb47db84698be4947e9663ef04a8253867a, Vincenzo Galdi, 10
+dc4ebdb47db84698be4947e9663ef04a8253867a, Tie Jun Cui, 11
+8c8c3c43d6e8dd89ca901f28db954e69ac5c31b8, Mohammad Mahdi Salary, 0
+8c8c3c43d6e8dd89ca901f28db954e69ac5c31b8, Samad Jafar-Zanjani, 1
+8c8c3c43d6e8dd89ca901f28db954e69ac5c31b8, Hossein Mosallaei, 2
+ffbec5d34fcd1cabd0d3d3b225a50357c9ae05b1, Lei Zhang, 0
+ffbec5d34fcd1cabd0d3d3b225a50357c9ae05b1, Ming Zheng Chen, 1
+ffbec5d34fcd1cabd0d3d3b225a50357c9ae05b1, Wankai Tang, 2
+ffbec5d34fcd1cabd0d3d3b225a50357c9ae05b1, Jun Yan Dai, 3
+ffbec5d34fcd1cabd0d3d3b225a50357c9ae05b1, Long Miao, 4
+ffbec5d34fcd1cabd0d3d3b225a50357c9ae05b1, Xiao Yang Zhou, 5
+ffbec5d34fcd1cabd0d3d3b225a50357c9ae05b1, Shi Jin, 6
+ffbec5d34fcd1cabd0d3d3b225a50357c9ae05b1, Qiang Cheng, 7
+ffbec5d34fcd1cabd0d3d3b225a50357c9ae05b1, Tie Jun Cui, 8
+4c27fb94f9ff2e507d6b90a458e93fb491b07892, Sun Il Kim, 0
+4c27fb94f9ff2e507d6b90a458e93fb491b07892, Junghyun Park, 1
+4c27fb94f9ff2e507d6b90a458e93fb491b07892, Byung Gil Jeong, 2
+4c27fb94f9ff2e507d6b90a458e93fb491b07892, Duhyun Lee, 3
+4c27fb94f9ff2e507d6b90a458e93fb491b07892, Ki-Yeon Yang, 4
+4c27fb94f9ff2e507d6b90a458e93fb491b07892, Yong-Young Park, 5
+4c27fb94f9ff2e507d6b90a458e93fb491b07892, Kyoungho Ha, 6
+4c27fb94f9ff2e507d6b90a458e93fb491b07892, Hyuck Choo, 7
+
+*******The table of citation relationship among the articles*******
+article_id_citing, article_id_cited
+039807a78af6720533528ada3c6074141d2f7907, ffbec5d34fcd1cabd0d3d3b225a50357c9ae05b1
+039807a78af6720533528ada3c6074141d2f7907, dc4ebdb47db84698be4947e9663ef04a8253867a
+039807a78af6720533528ada3c6074141d2f7907, 8c8c3c43d6e8dd89ca901f28db954e69ac5c31b8
+039807a78af6720533528ada3c6074141d2f7907, 865983382d1394a7b49246a70cda947e97f18d84
+865983382d1394a7b49246a70cda947e97f18d84, dc4ebdb47db84698be4947e9663ef04a8253867a
+ffbec5d34fcd1cabd0d3d3b225a50357c9ae05b1, dc4ebdb47db84698be4947e9663ef04a8253867a
+ffbec5d34fcd1cabd0d3d3b225a50357c9ae05b1, 8c8c3c43d6e8dd89ca901f28db954e69ac5c31b8
+ffbec5d34fcd1cabd0d3d3b225a50357c9ae05b1, 865983382d1394a7b49246a70cda947e97f18d84
+4c27fb94f9ff2e507d6b90a458e93fb491b07892, 039807a78af6720533528ada3c6074141d2f7907
+
+############################# Sample ID 118 #################################
+SQL type: multi_graph_filtering
+Question: How many articles are never cited by any other article but have been cited by at least one other article?
+SQL query: SELECT COUNT(*) FROM articles WHERE article_id NOT IN (SELECT article_id_citing FROM citing_cited) AND article_id IN (SELECT article_id_cited FROM citing_cited);
+Answer: 2
+60b5141acdfeaaf91d9dc145: NULL
+67709ec28bdf0084bd3b231b: 0
+568899d9d7848e0005399c6b: NULL
+Aligned: 0/3, Agreed: 1/1
+
+*******The table of articles*******
+article_id, article_title, title_word_count, author_count, reference_count
+540256bd5be8ac0af9a71d3247f0dbc2d83f5070, Prospex: Protocol Specification Extraction, 4, 4, 57
+4ef69ed98af8aefcbf97dea38e89413e6693c06f, A Survey on the Development of Network Protocol Fuzzing Techniques, 10, 4, 74
+feebac25a2486a98c05338ac0c85e5e90de4e6b6, STATEAFL: Greybox fuzzing for stateful network servers, 7, 1, 47
+59cf29bbe849078db571792d692218ecacb23568, Fuzzing: State of the Art, 5, 5, 194
+a0ee1a838fc4024bf98d7b3515307de963e19548, KiF: A stateful SIP Fuzzer, 5, 3, 14
+
+*******The table of article-author relationship*******
+article_id, author_name, author_position
+540256bd5be8ac0af9a71d3247f0dbc2d83f5070, Paolo Milani Comparetti, 0
+540256bd5be8ac0af9a71d3247f0dbc2d83f5070, Gilbert Wondracek, 1
+540256bd5be8ac0af9a71d3247f0dbc2d83f5070, Christopher Kruegel, 2
+540256bd5be8ac0af9a71d3247f0dbc2d83f5070, Engin Kirda, 3
+4ef69ed98af8aefcbf97dea38e89413e6693c06f, Zhaowei Zhang, 0
+4ef69ed98af8aefcbf97dea38e89413e6693c06f, Hongzheng Zhang, 1
+4ef69ed98af8aefcbf97dea38e89413e6693c06f, Jinjing Zhao, 2
+4ef69ed98af8aefcbf97dea38e89413e6693c06f, Yanfei Yin, 3
+feebac25a2486a98c05338ac0c85e5e90de4e6b6, Roberto Natella, 0
+59cf29bbe849078db571792d692218ecacb23568, Hongliang Liang, 0
+59cf29bbe849078db571792d692218ecacb23568, Xiaoxiao Pei, 1
+59cf29bbe849078db571792d692218ecacb23568, Xiaodong Jia, 2
+59cf29bbe849078db571792d692218ecacb23568, Wuwei Shen, 3
+59cf29bbe849078db571792d692218ecacb23568, Jian Zhang, 4
+a0ee1a838fc4024bf98d7b3515307de963e19548, Humberto J. Abdelnur, 0
+a0ee1a838fc4024bf98d7b3515307de963e19548, Radu State, 1
+a0ee1a838fc4024bf98d7b3515307de963e19548, Olivier Festor, 2
+
+*******The table of citation relationship among the articles*******
+article_id_citing, article_id_cited
+4ef69ed98af8aefcbf97dea38e89413e6693c06f, feebac25a2486a98c05338ac0c85e5e90de4e6b6
+4ef69ed98af8aefcbf97dea38e89413e6693c06f, 540256bd5be8ac0af9a71d3247f0dbc2d83f5070
+4ef69ed98af8aefcbf97dea38e89413e6693c06f, a0ee1a838fc4024bf98d7b3515307de963e19548
+4ef69ed98af8aefcbf97dea38e89413e6693c06f, 59cf29bbe849078db571792d692218ecacb23568
+feebac25a2486a98c05338ac0c85e5e90de4e6b6, 540256bd5be8ac0af9a71d3247f0dbc2d83f5070
+59cf29bbe849078db571792d692218ecacb23568, 540256bd5be8ac0af9a71d3247f0dbc2d83f5070
+59cf29bbe849078db571792d692218ecacb23568, a0ee1a838fc4024bf98d7b3515307de963e19548
+
+############################# Sample ID 104 #################################
+SQL type: multi_ran_filtering_foo
+Question: What are the titles of articles that have at most one author, listed in order of their title length from shortest to longest?
+SQL query: SELECT article_title FROM articles WHERE author_count <= 1 ORDER BY title_word_count ASC;
+Answer: Principles of scientific research team formation and evolution, SOME ASPECTS OF THE SEQUENTIAL DESIGN OF EXPERIMENTS
+5aed7ebd75deca0001626f9a: SOME ASPECTS OF THE SEQUENTIAL DESIGN OF EXPERIMENTS, Principles of scientific research team formation and evolution
+5fba83d59b6574a3b7a9cdef: Principles of scientific research team formation and evolution, SOME ASPECTS OF THE SEQUENTIAL DESIGN OF EXPERIMENTS, Higher-order correlations reveal complex memory in temporal hypergraphs, Slither: A Static Analysis Framework For Smart Contracts, Characterization of Ricci Almost Soliton on Lorentzian Manifolds, Snipuzz: Black-box Fuzzing of IoT Firmware via Message Snippet Inference, Exploring the Confluence of IoT and Metaverse: Future Opportunities and Challenges
+62a15df1dd6fa394ea04f063: Principles of scientific research team formation and evolution, SOME ASPECTS OF THE SEQUENTIAL DESIGN OF EXPERIMENTS
+Aligned: 1/3, Agreed: 0/1
+
+*******The table of articles*******
+article_id, article_title, title_word_count, author_count, reference_count
+328eaa194b05965f39dfe8291b3c40c751fed504, Principles of scientific research team formation and evolution, 8, 1, 40
+8ea05bbb6983a722781dc897d186a3f95d9f240d, Exploring the Confluence of IoT and Metaverse: Future Opportunities and Challenges, 11, 2, 118
+e23f0eeb8282286dfab005d49b9f53239a5f9fab, Snipuzz: Black-box Fuzzing of IoT Firmware via Message Snippet Inference, 10, 8, 51
+b77aa53b45f6aa1873780d0fa7aad50efb422458, SOME ASPECTS OF THE SEQUENTIAL DESIGN OF EXPERIMENTS, 8, 1, 11
+81e1099729d2a138565d9be6217ffc32cb2ea3f4, Higher-order correlations reveal complex memory in temporal hypergraphs, 8, 4, 69
+81aec3c1c0eb0b842216fe4d22077d688f8c64e6, Slither: A Static Analysis Framework For Smart Contracts, 8, 3, 29
+86303c9cdf357dac178d2a18a7a29ccff351af23, Characterization of Ricci Almost Soliton on Lorentzian Manifolds, 8, 4, 75
+
+*******The table of article-author relationship*******
+article_id, author_name, author_position
+328eaa194b05965f39dfe8291b3c40c751fed504, Staša Milojević, 0
+8ea05bbb6983a722781dc897d186a3f95d9f240d, Rameez Asif, 0
+8ea05bbb6983a722781dc897d186a3f95d9f240d, Syed Raheel Hassan, 1
+e23f0eeb8282286dfab005d49b9f53239a5f9fab, Xiaotao Feng, 0
+e23f0eeb8282286dfab005d49b9f53239a5f9fab, Ruoxi Sun, 1
+e23f0eeb8282286dfab005d49b9f53239a5f9fab, Xiaogang Zhu, 2
+e23f0eeb8282286dfab005d49b9f53239a5f9fab, Minhui Xue, 3
+e23f0eeb8282286dfab005d49b9f53239a5f9fab, Sheng Wen, 4
+e23f0eeb8282286dfab005d49b9f53239a5f9fab, Dongxi Liu, 5
+e23f0eeb8282286dfab005d49b9f53239a5f9fab, Surya Nepal, 6
+e23f0eeb8282286dfab005d49b9f53239a5f9fab, Yang Xiang, 7
+b77aa53b45f6aa1873780d0fa7aad50efb422458, HERBERT ROBBINS, 0
+81e1099729d2a138565d9be6217ffc32cb2ea3f4, Luca Gallo, 0
+81e1099729d2a138565d9be6217ffc32cb2ea3f4, Lucas Lacasa, 1
+81e1099729d2a138565d9be6217ffc32cb2ea3f4, Vito Latora, 2
+81e1099729d2a138565d9be6217ffc32cb2ea3f4, Federico Battiston, 3
+81aec3c1c0eb0b842216fe4d22077d688f8c64e6, Josselin Feist, 0
+81aec3c1c0eb0b842216fe4d22077d688f8c64e6, Gustavo Grieco, 1
+81aec3c1c0eb0b842216fe4d22077d688f8c64e6, Alex Groce, 2
+86303c9cdf357dac178d2a18a7a29ccff351af23, Yanlin Li, 0
+86303c9cdf357dac178d2a18a7a29ccff351af23, Huchchappa A. Kumara, 1
+86303c9cdf357dac178d2a18a7a29ccff351af23, Mallannara Siddalingappa Siddesha, 2
+86303c9cdf357dac178d2a18a7a29ccff351af23, Devaraja Mallesha Naik, 3
+
+*******The table of citation relationship among the articles*******
+article_id_citing, article_id_cited
+
+############################# Sample ID 20 #################################
+SQL type: multi_ran_organizing
+Question: How many articles are there for each possible count of words in the article titles?
+SQL query: SELECT title_word_count, COUNT(*) FROM articles GROUP BY title_word_count;
+Answer: 6, 1, 7, 1, 9, 1, 11, 1
+67ebfd4d8ea1101322300f73: 1:1, 3:8, 5:1
+63e57ca5d6e126546cfc66bf: 6, 7, 9, 11
+62fcf3d9948e4a6a9623cce8: There are 4 unique numbers of words in the article titles, so the number of articles is also 4.
+Aligned: 0/3, Agreed: 0/1
+
+*******The table of articles*******
+article_id, article_title, title_word_count, author_count, reference_count
+b3848d32f7294ec708627897833c4097eb4d8778, LaMDA: Language Models for Dialog Applications, 6, 60, 109
+d5eff02f4fbc4e7555615b97e00a8a0a079dd6cc, SmartSeed: Smart Seed Generation for Efficient Fuzzing, 7, 7, 50
+b96ec25d34037b211c25135e9b4462f6639a26e2, Isoperimetric Problems for Convex Bodies and a Localization Lemma, 9, 3, 17
+a30f912f8c5e2a2bfb06351d4578e1ba3fa37896, CodeT5: Identifier-aware Unified Pre-trained Encoder-Decoder Models for Code Understanding and Generation, 11, 4, 35
+
+*******The table of article-author relationship*******
+article_id, author_name, author_position
+b3848d32f7294ec708627897833c4097eb4d8778, Romal Thoppilan, 0
+b3848d32f7294ec708627897833c4097eb4d8778, Daniel De Freitas, 1
+b3848d32f7294ec708627897833c4097eb4d8778, Jamie Hall, 2
+b3848d32f7294ec708627897833c4097eb4d8778, Noam Shazeer, 3
+b3848d32f7294ec708627897833c4097eb4d8778, Apoorv Kulshreshtha, 4
+b3848d32f7294ec708627897833c4097eb4d8778, Heng-Tze Cheng, 5
+b3848d32f7294ec708627897833c4097eb4d8778, Alicia Jin, 6
+b3848d32f7294ec708627897833c4097eb4d8778, Taylor Bos, 7
+b3848d32f7294ec708627897833c4097eb4d8778, Leslie Baker, 8
+b3848d32f7294ec708627897833c4097eb4d8778, Yu Du, 9
+b3848d32f7294ec708627897833c4097eb4d8778, YaGuang Li, 10
+b3848d32f7294ec708627897833c4097eb4d8778, Hongrae Lee, 11
+b3848d32f7294ec708627897833c4097eb4d8778, Huaixiu Steven Zheng, 12
+b3848d32f7294ec708627897833c4097eb4d8778, Amin Ghafouri, 13
+b3848d32f7294ec708627897833c4097eb4d8778, Marcelo Menegali, 14
+b3848d32f7294ec708627897833c4097eb4d8778, Yanping Huang, 15
+b3848d32f7294ec708627897833c4097eb4d8778, Maxim Krikun, 16
+b3848d32f7294ec708627897833c4097eb4d8778, Dmitry Lepikhin, 17
+b3848d32f7294ec708627897833c4097eb4d8778, James Qin, 18
+b3848d32f7294ec708627897833c4097eb4d8778, Dehao Chen, 19
+b3848d32f7294ec708627897833c4097eb4d8778, Yuanzhong Xu, 20
+b3848d32f7294ec708627897833c4097eb4d8778, Zhifeng Chen, 21
+b3848d32f7294ec708627897833c4097eb4d8778, Adam Roberts, 22
+b3848d32f7294ec708627897833c4097eb4d8778, Maarten Bosma, 23
+b3848d32f7294ec708627897833c4097eb4d8778, Vincent Zhao, 24
+b3848d32f7294ec708627897833c4097eb4d8778, Yanqi Zhou, 25
+b3848d32f7294ec708627897833c4097eb4d8778, Chung-Ching Chang, 26
+b3848d32f7294ec708627897833c4097eb4d8778, Igor Krivokon, 27
+b3848d32f7294ec708627897833c4097eb4d8778, Will Rusch, 28
+b3848d32f7294ec708627897833c4097eb4d8778, Marc Pickett, 29
+b3848d32f7294ec708627897833c4097eb4d8778, Pranesh Srinivasan, 30
+b3848d32f7294ec708627897833c4097eb4d8778, Laichee Man, 31
+b3848d32f7294ec708627897833c4097eb4d8778, Kathleen Meier-Hellstern, 32
+b3848d32f7294ec708627897833c4097eb4d8778, Meredith Ringel Morris, 33
+b3848d32f7294ec708627897833c4097eb4d8778, Tulsee Doshi, 34
+b3848d32f7294ec708627897833c4097eb4d8778, Renelito Delos Santos, 35
+b3848d32f7294ec708627897833c4097eb4d8778, Toju Duke, 36
+b3848d32f7294ec708627897833c4097eb4d8778, Johnny Soraker, 37
+b3848d32f7294ec708627897833c4097eb4d8778, Ben Zevenbergen, 38
+b3848d32f7294ec708627897833c4097eb4d8778, Vinodkumar Prabhakaran, 39
+b3848d32f7294ec708627897833c4097eb4d8778, Mark Diaz, 40
+b3848d32f7294ec708627897833c4097eb4d8778, Ben Hutchinson, 41
+b3848d32f7294ec708627897833c4097eb4d8778, Kristen Olson, 42
+b3848d32f7294ec708627897833c4097eb4d8778, Alejandra Molina, 43
+b3848d32f7294ec708627897833c4097eb4d8778, Erin Hoffman-John, 44
+b3848d32f7294ec708627897833c4097eb4d8778, Josh Lee, 45
+b3848d32f7294ec708627897833c4097eb4d8778, Lora Aroyo, 46
+b3848d32f7294ec708627897833c4097eb4d8778, Ravi Rajakumar, 47
+b3848d32f7294ec708627897833c4097eb4d8778, Alena Butryna, 48
+b3848d32f7294ec708627897833c4097eb4d8778, Matthew Lamm, 49
+b3848d32f7294ec708627897833c4097eb4d8778, Viktoriya Kuzmina, 50
+b3848d32f7294ec708627897833c4097eb4d8778, Joe Fenton, 51
+b3848d32f7294ec708627897833c4097eb4d8778, Aaron Cohen, 52
+b3848d32f7294ec708627897833c4097eb4d8778, Rachel Bernstein, 53
+b3848d32f7294ec708627897833c4097eb4d8778, Ray Kurzweil, 54
+b3848d32f7294ec708627897833c4097eb4d8778, Blaise Aguera-Arcas, 55
+b3848d32f7294ec708627897833c4097eb4d8778, Claire Cui, 56
+b3848d32f7294ec708627897833c4097eb4d8778, Marian Croak, 57
+b3848d32f7294ec708627897833c4097eb4d8778, Ed Chi, 58
+b3848d32f7294ec708627897833c4097eb4d8778, Quoc Le, 59
+d5eff02f4fbc4e7555615b97e00a8a0a079dd6cc, Chenyang Lv, 0
+d5eff02f4fbc4e7555615b97e00a8a0a079dd6cc, Shouling Ji, 1
+d5eff02f4fbc4e7555615b97e00a8a0a079dd6cc, Yuwei Li, 2
+d5eff02f4fbc4e7555615b97e00a8a0a079dd6cc, Junfeng Zhou, 3
+d5eff02f4fbc4e7555615b97e00a8a0a079dd6cc, Jianhai Chen, 4
+d5eff02f4fbc4e7555615b97e00a8a0a079dd6cc, Pan Zhou, 5
+d5eff02f4fbc4e7555615b97e00a8a0a079dd6cc, Jing Chen, 6
+b96ec25d34037b211c25135e9b4462f6639a26e2, R. Kannan, 0
+b96ec25d34037b211c25135e9b4462f6639a26e2, L. Lovász, 1
+b96ec25d34037b211c25135e9b4462f6639a26e2, M. Simonovits, 2
+a30f912f8c5e2a2bfb06351d4578e1ba3fa37896, Yue Wang, 0
+a30f912f8c5e2a2bfb06351d4578e1ba3fa37896, Weishi Wang, 1
+a30f912f8c5e2a2bfb06351d4578e1ba3fa37896, Shafiq Joty, 2
+a30f912f8c5e2a2bfb06351d4578e1ba3fa37896, Steven C.H. Hoi, 3
+
+*******The table of citation relationship among the articles*******
+article_id_citing, article_id_cited
+
+############################# Sample ID 7 #################################
+SQL type: multi_ran_aggregating
+Question: What is the average number of words in the titles of all articles?
+SQL query: SELECT AVG(title_word_count) FROM articles;
+Answer: 8.142857142857142
+67ebfd4d8ea1101322300f73: 8.142857142857142
+5fba83d59b6574a3b7a9cdef: NULL
+65cb5de55e8766ad6e98a853: The average number of words in the titles of the articles is 9.5.
+Aligned: 1/3, Agreed: 0/1
+
+*******The table of articles*******
+article_id, article_title, title_word_count, author_count, reference_count
+b8fb8283699f8fcce764c75b174266bfbbbcaf9c, Fundamentals and applications of millimeter-wave and terahertz programmable metasurfaces, 9, 8, 101
+0915229c4dd645e0351cc8cc75641fae11abaf11, Random walks on hypergraphs, 4, 4, 63
+b77aa53b45f6aa1873780d0fa7aad50efb422458, SOME ASPECTS OF THE SEQUENTIAL DESIGN OF EXPERIMENTS, 8, 1, 11
+41aaf65390f117311c650a1971e99083d5eaf027, Relationships among structure, composition, and selectivity in the electrocatalytic reduction of nitrateions, 12, 4, 53
+7fbe06df45fbd1c6041f741ac4d735ba60d6b265, Cooperative Cu with defective MXene for enhanced nitrate electroreduction to ammonia, 11, 10, 51
+9f351065392554526308afa8b0a416fa21202457, Active hydrogen boosts electrochemical nitrate reduction to ammonia, 8, 8, 62
+a0ee1a838fc4024bf98d7b3515307de963e19548, KiF: A stateful SIP Fuzzer, 5, 3, 14
+
+*******The table of article-author relationship*******
+article_id, author_name, author_position
+b8fb8283699f8fcce764c75b174266bfbbbcaf9c, Xiaojian Fu, 0
+b8fb8283699f8fcce764c75b174266bfbbbcaf9c, Peng Wang, 1
+b8fb8283699f8fcce764c75b174266bfbbbcaf9c, Yujie Liu, 2
+b8fb8283699f8fcce764c75b174266bfbbbcaf9c, Yuan Fu, 3
+b8fb8283699f8fcce764c75b174266bfbbbcaf9c, Qingdong Cai, 4
+b8fb8283699f8fcce764c75b174266bfbbbcaf9c, Yu Wang, 5
+b8fb8283699f8fcce764c75b174266bfbbbcaf9c, Silei Yang, 6
+b8fb8283699f8fcce764c75b174266bfbbbcaf9c, Tie Jun Cui, 7
+0915229c4dd645e0351cc8cc75641fae11abaf11, Timoteo Carletti, 0
+0915229c4dd645e0351cc8cc75641fae11abaf11, Federico Battiston, 1
+0915229c4dd645e0351cc8cc75641fae11abaf11, Giulia Cencetti, 2
+0915229c4dd645e0351cc8cc75641fae11abaf11, Duccio Fanelli, 3
+b77aa53b45f6aa1873780d0fa7aad50efb422458, HERBERT ROBBINS, 0
+41aaf65390f117311c650a1971e99083d5eaf027, Yixiao Zhang, 0
+41aaf65390f117311c650a1971e99083d5eaf027, Qingdian Liao, 1
+41aaf65390f117311c650a1971e99083d5eaf027, Elena L. Gubanova, 2
+41aaf65390f117311c650a1971e99083d5eaf027, Aliaksandr S. Bandarenka, 3
+7fbe06df45fbd1c6041f741ac4d735ba60d6b265, Yi Tan, 0
+7fbe06df45fbd1c6041f741ac4d735ba60d6b265, Yijin Zhao, 1
+7fbe06df45fbd1c6041f741ac4d735ba60d6b265, Xiaokang Chen, 2
+7fbe06df45fbd1c6041f741ac4d735ba60d6b265, Shengliang Zhai, 3
+7fbe06df45fbd1c6041f741ac4d735ba60d6b265, Xiao Wang, 4
+7fbe06df45fbd1c6041f741ac4d735ba60d6b265, Le Su, 5
+7fbe06df45fbd1c6041f741ac4d735ba60d6b265, Hongyan Yang, 6
+7fbe06df45fbd1c6041f741ac4d735ba60d6b265, Wei-Qiao Deng, 7
+7fbe06df45fbd1c6041f741ac4d735ba60d6b265, Ghim Wei Ho, 8
+7fbe06df45fbd1c6041f741ac4d735ba60d6b265, Hao Wu, 9
+9f351065392554526308afa8b0a416fa21202457, Kui Fan, 0
+9f351065392554526308afa8b0a416fa21202457, Wenfu Xie, 1
+9f351065392554526308afa8b0a416fa21202457, Jinze Li, 2
+9f351065392554526308afa8b0a416fa21202457, Yining Sun, 3
+9f351065392554526308afa8b0a416fa21202457, Pengcheng Xu, 4
+9f351065392554526308afa8b0a416fa21202457, Yang Tang, 5
+9f351065392554526308afa8b0a416fa21202457, Zhenhua Li, 6
+9f351065392554526308afa8b0a416fa21202457, Mingfei Shao, 7
+a0ee1a838fc4024bf98d7b3515307de963e19548, Humberto J. Abdelnur, 0
+a0ee1a838fc4024bf98d7b3515307de963e19548, Radu State, 1
+a0ee1a838fc4024bf98d7b3515307de963e19548, Olivier Festor, 2
+
+*******The table of citation relationship among the articles*******
+article_id_citing, article_id_cited
+7fbe06df45fbd1c6041f741ac4d735ba60d6b265, 9f351065392554526308afa8b0a416fa21202457
+
+############################# Sample ID 35 #################################
+SQL type: multi_ran_organizing
+Question: How many words are in the titles of articles, listed in ascending order by the number of authors?
+SQL query: SELECT title_word_count FROM articles ORDER BY author_count ASC;
+Answer: 14, 8, 11, 13, 14
+5b54d7a3184c610001757ac0: 14, 13, 11, 8, 14
+66b5682e53ca081f5a2d5d23: 14, 8, 11, 13, 14
+60f4696161736ffaef73b434: 8, 11, 14, 13, 14
+Aligned: 1/3, Agreed: 0/1
+
+*******The table of articles*******
+article_id, article_title, title_word_count, author_count, reference_count
+b54d69a597f8582bebe2bce04f2306077cd061a1, Recent progress and scientific challenges in multi-material additive manufacturing via laser-based powder bed fusion, 14, 2, 161
+16af2c32f4f26cd0be27432a3486d477017c0348, A Sequential Monte Carlo Algorithm to Incorporate Model Uncertainty in Bayesian Sequential Design, 13, 3, 51
+bff7950714251ef307c7f5465cd178c997a9002e, Monotonicity-based regularization for shape reconstruction in linear elasticity, 8, 2, 29
+d11df4d3e6349cebc94f55c7a1457895517a9e05, Energy Coupling Mechanisms and Scaling Behavior Associated with Laser Powder Bed Fusion Additive Manufacturing, 14, 7, 36
+bb667467e0989e33715270af8c76bf08375c6aaf, Mesoscopic simulation model of selective laser melting of stainless steel powder, 11, 2, 20
+
+*******The table of article-author relationship*******
+article_id, author_name, author_position
+b54d69a597f8582bebe2bce04f2306077cd061a1, Chao Wei, 0
+b54d69a597f8582bebe2bce04f2306077cd061a1, Lin Li, 1
+16af2c32f4f26cd0be27432a3486d477017c0348, C. C. Drovandi, 0
+16af2c32f4f26cd0be27432a3486d477017c0348, J. M. McGree, 1
+16af2c32f4f26cd0be27432a3486d477017c0348, A. N. Pettitt, 2
+bff7950714251ef307c7f5465cd178c997a9002e, Sarah Eberle, 0
+bff7950714251ef307c7f5465cd178c997a9002e, Bastian Harrach, 1
+d11df4d3e6349cebc94f55c7a1457895517a9e05, Jianchao Ye, 0
+d11df4d3e6349cebc94f55c7a1457895517a9e05, Saad A. Khairallah, 1
+d11df4d3e6349cebc94f55c7a1457895517a9e05, Alexander M. Rubenchik, 2
+d11df4d3e6349cebc94f55c7a1457895517a9e05, Michael F. Crumb, 3
+d11df4d3e6349cebc94f55c7a1457895517a9e05, Gabe Guss, 4
+d11df4d3e6349cebc94f55c7a1457895517a9e05, Jim Belak, 5
+d11df4d3e6349cebc94f55c7a1457895517a9e05, Manyalibo J. Matthews, 6
+bb667467e0989e33715270af8c76bf08375c6aaf, Saad A. Khairallah, 0
+bb667467e0989e33715270af8c76bf08375c6aaf, Andy Anderson, 1
+
+*******The table of citation relationship among the articles*******
+article_id_citing, article_id_cited
+b54d69a597f8582bebe2bce04f2306077cd061a1, bb667467e0989e33715270af8c76bf08375c6aaf
+
+############################# Sample ID 42 #################################
+SQL type: multi_ran_filtering_ofo
+Question: What are the names of the authors who are listed as the first five authors on any article?
+SQL query: SELECT author_name FROM article_author WHERE author_position <= 4;
+Answer: Akash Aggarwal, Yung C. Shin, Arvind Kumar, Guanyu Liu, Ziao Tian, Zhenyu Yang, Zhongying Xue, Miao Zhang, Tie Jun Cui, Shuo Liu, Lei Zhang, Patricia Kleimann, Lisa-Marie Irschfeld, Maria Grandoch, Ulrich Flögel, Sebastian Temme, Vu Le, Mehrdad Afshari, Zhendong Su
+65cbbbcc5c1ef8b850c91eb5: Patricia Kleimann Lisa-Marie Irschfeld Maria Grandoch Ulrich Flögel Sebastian Temme
+6730f965beb7513190d2be93: Guanyu Liu, Ziao Tian, Zhenyu Yang, Zhongying Xue, Miao Zhang
+5c14b996ce422b0001d71ac8: Authors for article 1: Guanyu Liu, Ziao Tian, Zhenyu Yang, Zhongying Xue, Miao Zhang
+Aligned: 0/3, Agreed: 0/1
+
+*******The table of articles*******
+article_id, article_title, title_word_count, author_count, reference_count
+32eb3b8974d6abb51d211882a6ea8d93cfa52e09, Investigation of the transient coupling between the dynamic laser beam absorptance and the melt pool - vapor depression morphology in laser powder bed fusion process, 25, 3, 45
+bd87b2fe1250f2e59f33b63df209c7376b4d1a5c, Graphene-assisted metal transfer printing for wafer-scale integration of metal electrodes and two-dimensional materials, 13, 13, 39
+83c831bd7d0cc88416da5be770d5cf7ee25b3005, Information metamaterials and metasurfaces, 4, 3, 120
+5b9a5819ea325ff161c0d7df58a4c83feb424d8b, Trained Innate Immunity in Animal Models of Cardiovascular Diseases, 9, 5, 115
+79bbd54d5bdfd20980e5f9a65480f5e127fc1221, Compiler Validation via Equivalence Modulo Inputs, 6, 3, 30
+
+*******The table of article-author relationship*******
+article_id, author_name, author_position
+32eb3b8974d6abb51d211882a6ea8d93cfa52e09, Akash Aggarwal, 0
+32eb3b8974d6abb51d211882a6ea8d93cfa52e09, Yung C. Shin, 1
+32eb3b8974d6abb51d211882a6ea8d93cfa52e09, Arvind Kumar, 2
+bd87b2fe1250f2e59f33b63df209c7376b4d1a5c, Guanyu Liu, 0
+bd87b2fe1250f2e59f33b63df209c7376b4d1a5c, Ziao Tian, 1
+bd87b2fe1250f2e59f33b63df209c7376b4d1a5c, Zhenyu Yang, 2
+bd87b2fe1250f2e59f33b63df209c7376b4d1a5c, Zhongying Xue, 3
+bd87b2fe1250f2e59f33b63df209c7376b4d1a5c, Miao Zhang, 4
+bd87b2fe1250f2e59f33b63df209c7376b4d1a5c, Xudong Hu, 5
+bd87b2fe1250f2e59f33b63df209c7376b4d1a5c, Yang Wang, 6
+bd87b2fe1250f2e59f33b63df209c7376b4d1a5c, Yuekun Yang, 7
+bd87b2fe1250f2e59f33b63df209c7376b4d1a5c, Paul K. Chu, 8
+bd87b2fe1250f2e59f33b63df209c7376b4d1a5c, Yongfeng Mei, 9
+bd87b2fe1250f2e59f33b63df209c7376b4d1a5c, Lei Liao, 10
+bd87b2fe1250f2e59f33b63df209c7376b4d1a5c, Weida Hu, 11
+bd87b2fe1250f2e59f33b63df209c7376b4d1a5c, Zengfeng Di, 12
+83c831bd7d0cc88416da5be770d5cf7ee25b3005, Tie Jun Cui, 0
+83c831bd7d0cc88416da5be770d5cf7ee25b3005, Shuo Liu, 1
+83c831bd7d0cc88416da5be770d5cf7ee25b3005, Lei Zhang, 2
+5b9a5819ea325ff161c0d7df58a4c83feb424d8b, Patricia Kleimann, 0
+5b9a5819ea325ff161c0d7df58a4c83feb424d8b, Lisa-Marie Irschfeld, 1
+5b9a5819ea325ff161c0d7df58a4c83feb424d8b, Maria Grandoch, 2
+5b9a5819ea325ff161c0d7df58a4c83feb424d8b, Ulrich Flögel, 3
+5b9a5819ea325ff161c0d7df58a4c83feb424d8b, Sebastian Temme, 4
+79bbd54d5bdfd20980e5f9a65480f5e127fc1221, Vu Le, 0
+79bbd54d5bdfd20980e5f9a65480f5e127fc1221, Mehrdad Afshari, 1
+79bbd54d5bdfd20980e5f9a65480f5e127fc1221, Zhendong Su, 2
+
+*******The table of citation relationship among the articles*******
+article_id_citing, article_id_cited
+
+############################# Sample ID 140 #################################
+SQL type: multi_ran_filtering_foa
+Question: What is the smallest number of words in the title of any article that cites more than 69 references?
+SQL query: SELECT MIN(title_word_count) FROM articles WHERE reference_count > 69;
+Answer: NULL
+65cbbbcc5c1ef8b850c91eb5: 7
+6730f965beb7513190d2be93: 7
+5c975c49700a2500011572ca: NULL
+Aligned: 1/3, Agreed: 1/1
+
+*******The table of articles*******
+article_id, article_title, title_word_count, author_count, reference_count
+a26a9038ab5a1428e3fbc8708029b54292ebda4c, Attention to Global Warming*, 4, 3, 41
+ff848ddcea4cdede4c5aef7ab211f9e26fc6fbd6, Testing exchangeability: fork-convexity, supermartingales, and e-processes, 6, 4, 46
+7c41e58832f3af5fd9e09674924d6b5f822e8eac, Exploring Unexplored Generalization Challenges for Cross-Database Semantic Parsing, 8, 4, 61
+4fb79dbd3bb3a30eef56b3b78faec3664d84511b, Metaverse in Education: Vision, Opportunities, and Challenges, 7, 5, 69
+
+*******The table of article-author relationship*******
+article_id, author_name, author_position
+a26a9038ab5a1428e3fbc8708029b54292ebda4c, Darwin Choi, 0
+a26a9038ab5a1428e3fbc8708029b54292ebda4c, Zhenyu Gao, 1
+a26a9038ab5a1428e3fbc8708029b54292ebda4c, Wenxi Jiang, 2
+ff848ddcea4cdede4c5aef7ab211f9e26fc6fbd6, Aaditya Ramdas, 0
+ff848ddcea4cdede4c5aef7ab211f9e26fc6fbd6, Johannes Ruf, 1
+ff848ddcea4cdede4c5aef7ab211f9e26fc6fbd6, Martin Larsson, 2
+ff848ddcea4cdede4c5aef7ab211f9e26fc6fbd6, Wouter M. Koolen, 3
+7c41e58832f3af5fd9e09674924d6b5f822e8eac, Alane Suhr, 0
+7c41e58832f3af5fd9e09674924d6b5f822e8eac, Ming-Wei Chang†, 1
+7c41e58832f3af5fd9e09674924d6b5f822e8eac, Peter Shaw†, 2
+7c41e58832f3af5fd9e09674924d6b5f822e8eac, Kenton Lee†, 3
+4fb79dbd3bb3a30eef56b3b78faec3664d84511b, Hong Lin, 0
+4fb79dbd3bb3a30eef56b3b78faec3664d84511b, Shicheng Wan, 1
+4fb79dbd3bb3a30eef56b3b78faec3664d84511b, Wensheng Gan, 2
+4fb79dbd3bb3a30eef56b3b78faec3664d84511b, Jiahui Chen, 3
+4fb79dbd3bb3a30eef56b3b78faec3664d84511b, H. Chao, 4
+
+*******The table of citation relationship among the articles*******
+article_id_citing, article_id_cited
+
+############################# Sample ID 40 #################################
+SQL type: multi_ran_aggregating
+Question: What are the different numbers of authors that have contributed to articles?
+SQL query: SELECT DISTINCT author_count FROM articles;
+Answer: 7, 5, 2, 6, 8
+57321c8ec63b5c000f367bb2: 35
+65456ebc819cdd5600552571: 7, 5, 2, 6, 8
+65ddd09726a4d9a8ee4a5ab6: first-number-of-authors 7, second-number-of-authors 7, third-number-of-authors 5, fourth-number-of-authors 2, fifth-number-of-authors 6, sixth-number-of-authors 8
+Aligned: 1/3, Agreed: 0/1
+
+*******The table of articles*******
+article_id, article_title, title_word_count, author_count, reference_count
+ae388fc319f3056bf18a491b3d80c9a934c65023, Macroscopic model and statistical model to characterize electromagnetic information of a digital coding metasurface, 14, 7, 57
+c4d502442d8da16bc7c33ddea8f594623ff45fc9, Task-Adaptive Angle Selection for Computed Tomography-Based Defect Detection, 8, 7, 25
+7853fd5f862126d257bf90d91a8533dc4795f769, Big Data Meets Metaverse: A Survey, 6, 5, 148
+8d7d4d75437ca48415eed2a4153d5f8bef92e93e, On Subjective Uncertainty Quantification and Calibration in Natural Language Generation, 10, 2, 76
+8d45b277887b12ba6c2fe1ea1d588a8551153589, Unified Resource Allocation Framework for the Edge Intelligence-Enabled Metaverse, 9, 6, 18
+192962e601a13313834f6da356a26c6ac0bbf963, Two-dimensional materials for next-generation computing technologies, 6, 8, 139
+
+*******The table of article-author relationship*******
+article_id, author_name, author_position
+ae388fc319f3056bf18a491b3d80c9a934c65023, Rui Wen Shao, 0
+ae388fc319f3056bf18a491b3d80c9a934c65023, Jun Wei Wu, 1
+ae388fc319f3056bf18a491b3d80c9a934c65023, Zheng Xing Wang, 2
+ae388fc319f3056bf18a491b3d80c9a934c65023, Hui Xu, 3
+ae388fc319f3056bf18a491b3d80c9a934c65023, Han Qing Yang, 4
+ae388fc319f3056bf18a491b3d80c9a934c65023, Qiang Cheng, 5
+ae388fc319f3056bf18a491b3d80c9a934c65023, Tie Jun Cui, 6
+c4d502442d8da16bc7c33ddea8f594623ff45fc9, Tianyuan Wang, 0
+c4d502442d8da16bc7c33ddea8f594623ff45fc9, Virginia Florian, 1
+c4d502442d8da16bc7c33ddea8f594623ff45fc9, Richard Schielein, 2
+c4d502442d8da16bc7c33ddea8f594623ff45fc9, Christian Kretzer, 3
+c4d502442d8da16bc7c33ddea8f594623ff45fc9, Stefan Kasperl, 4
+c4d502442d8da16bc7c33ddea8f594623ff45fc9, Felix Lucka, 5
+c4d502442d8da16bc7c33ddea8f594623ff45fc9, Tristan van Leeuwen, 6
+7853fd5f862126d257bf90d91a8533dc4795f769, Jiayi Sun, 0
+7853fd5f862126d257bf90d91a8533dc4795f769, Wensheng Gan, 1
+7853fd5f862126d257bf90d91a8533dc4795f769, Zefeng Chen, 2
+7853fd5f862126d257bf90d91a8533dc4795f769, Junhui Li, 3
+7853fd5f862126d257bf90d91a8533dc4795f769, Philip S. Yu, 4
+8d7d4d75437ca48415eed2a4153d5f8bef92e93e, Ziyu Wang, 0
+8d7d4d75437ca48415eed2a4153d5f8bef92e93e, Chris Holmes, 1
+8d45b277887b12ba6c2fe1ea1d588a8551153589, Wei Chong Ng, 0
+8d45b277887b12ba6c2fe1ea1d588a8551153589, Wei Yang Bryan Lim, 1
+8d45b277887b12ba6c2fe1ea1d588a8551153589, Jer Shyuan Ng, 2
+8d45b277887b12ba6c2fe1ea1d588a8551153589, Zehui Xiong, 3
+8d45b277887b12ba6c2fe1ea1d588a8551153589, Dusit Niyato, 4
+8d45b277887b12ba6c2fe1ea1d588a8551153589, Chunyan Miao, 5
+192962e601a13313834f6da356a26c6ac0bbf963, Chunsen Liu, 0
+192962e601a13313834f6da356a26c6ac0bbf963, Huawei Chen, 1
+192962e601a13313834f6da356a26c6ac0bbf963, Shuiyuan Wang, 2
+192962e601a13313834f6da356a26c6ac0bbf963, Qi Liu, 3
+192962e601a13313834f6da356a26c6ac0bbf963, Yu-Gang Jiang, 4
+192962e601a13313834f6da356a26c6ac0bbf963, David Wei Zhang, 5
+192962e601a13313834f6da356a26c6ac0bbf963, Ming Liu, 6
+192962e601a13313834f6da356a26c6ac0bbf963, Peng Zhou, 7
+
+*******The table of citation relationship among the articles*******
+article_id_citing, article_id_cited
+
+############################# Sample ID 29 #################################
+SQL type: multi_ran_aggregating
+Question: What are the unique names of authors who have contributed to the articles?
+SQL query: SELECT DISTINCT author_name FROM article_author;
+Answer: David Patterson, Joseph Gonzalez, Quoc Le, Chen Liang, Lluis-Miquel Munguia, Daniel Rothchild, David So, Maud Texier, Jeff Dean, Jiawei Liu, Chunqiu Steven Xia, Yuyao Wang, Lingming Zhang, Harvey Nguyen, Anh Viet Pham, Man Duy (Marty) Pham, Mia Hang Pham, Huayan Guo, Ying-Chang Liang, Jie Chen, Erik G. Larsson, Ch. Hauert
+610502298d2771ca33b3b885: Quoc Le, Maud Texier, Harvey Nguyen
+63e57ca5d6e126546cfc66bf: David Patterson, Joseph Gonzalez, Quoc Le, Chen Liang, Lluis-Miquel Munguia. Daniel Rothchild, David So, Maud Texier, Jeff Dean, Jiawei Liu, Chunqiu Steven Xia, Yuyao Wang, Lingming, hang, Harvey Nguyen, Anh Viet Pham, Man Duy (Marty) Pham, Mia Hang Pham. Huayan Guo, Ying-Chang Liang, Jie Chen, Erik G. Larsson, Ch. Hauert
+5bb48501d3be310001c1afeb: Anh Viet Pham, Ch. Hauert, Chen Liang, Chunqiu Steven Xia, Daniel Rothchild, David Patterson, David So, Erik G. Larsson, Harvey Nguyen, Huayan Guo, Jeff Dean, Jiawei Liu, Jie Chen, Joseph Gonzalez, Lingming Zhang, Lluis-Miquel Munguia, Man Duy (Marty) Pham, Maud Texier, Mia Hang Pham, Quoc Le, Ying-Chang Liang, Yuyao Wang
+Aligned: 1/3, Agreed: 0/1
+
+*******The table of articles*******
+article_id, article_title, title_word_count, author_count, reference_count
+7a16d9b4e04300d034502dc7dd58428714594e2c, Carbon Emissions and Large Neural Network Training, 7, 9, 55
+b45ec1cb2ba6b2d1ac24723fa836aee06a3db97a, Is Your Code Generated by ChatGPT Really Correct? Rigorous Evaluation of Large Language Models for Code Generation, 17, 4, 76
+fd08fe74304ac354df0b7d89f1c99c3981458d1a, Climate change and corporate credit worthiness: International evidence, 8, 4, 67
+cbfa4ab4156926163978a55f101f67fcf75e1730, Weighted Sum-Rate Optimization for Intelligent Reflecting Surface Enhanced Wireless Networks, 10, 4, 46
+d5f7f565cc63b47b5d38747b963e4c8b38d09f21, Fundamental clusters in spatial 2×2 games, 6, 1, 27
+
+*******The table of article-author relationship*******
+article_id, author_name, author_position
+7a16d9b4e04300d034502dc7dd58428714594e2c, David Patterson, 0
+7a16d9b4e04300d034502dc7dd58428714594e2c, Joseph Gonzalez, 1
+7a16d9b4e04300d034502dc7dd58428714594e2c, Quoc Le, 2
+7a16d9b4e04300d034502dc7dd58428714594e2c, Chen Liang, 3
+7a16d9b4e04300d034502dc7dd58428714594e2c, Lluis-Miquel Munguia, 4
+7a16d9b4e04300d034502dc7dd58428714594e2c, Daniel Rothchild, 5
+7a16d9b4e04300d034502dc7dd58428714594e2c, David So, 6
+7a16d9b4e04300d034502dc7dd58428714594e2c, Maud Texier, 7
+7a16d9b4e04300d034502dc7dd58428714594e2c, Jeff Dean, 8
+b45ec1cb2ba6b2d1ac24723fa836aee06a3db97a, Jiawei Liu, 0
+b45ec1cb2ba6b2d1ac24723fa836aee06a3db97a, Chunqiu Steven Xia, 1
+b45ec1cb2ba6b2d1ac24723fa836aee06a3db97a, Yuyao Wang, 2
+b45ec1cb2ba6b2d1ac24723fa836aee06a3db97a, Lingming Zhang, 3
+fd08fe74304ac354df0b7d89f1c99c3981458d1a, Harvey Nguyen, 0
+fd08fe74304ac354df0b7d89f1c99c3981458d1a, Anh Viet Pham, 1
+fd08fe74304ac354df0b7d89f1c99c3981458d1a, Man Duy (Marty) Pham, 2
+fd08fe74304ac354df0b7d89f1c99c3981458d1a, Mia Hang Pham, 3
+cbfa4ab4156926163978a55f101f67fcf75e1730, Huayan Guo, 0
+cbfa4ab4156926163978a55f101f67fcf75e1730, Ying-Chang Liang, 1
+cbfa4ab4156926163978a55f101f67fcf75e1730, Jie Chen, 2
+cbfa4ab4156926163978a55f101f67fcf75e1730, Erik G. Larsson, 3
+d5f7f565cc63b47b5d38747b963e4c8b38d09f21, Ch. Hauert, 0
+
+*******The table of citation relationship among the articles*******
+article_id_citing, article_id_cited
+
+############################# Sample ID 0 #################################
+SQL type: multi_ran_filtering_foo
+Question: List the names of authors who are either the first or second author on an article, sorted by their position in descending order.
+SQL query: SELECT author_name FROM article_author WHERE author_position < 2 ORDER BY author_position DESC;
+Answer: Haima Zhang, Shaohua Tan, Alex Tamkin, Lucas Beyer, Kumar Vijay Mishra, Hu Xu, Wei Chen, Belinda Z. Li, Alexey Dosovitskiy, John A. Hodge, Ryan Martin
+66a0546b92a6ce30ea377c9b: Xu, Zhang, Chen, Tan, Li, Tamkin, Dosovitskiy, Beyer, Hodge, Mishra, Martin
+5ba68588b709e800015a23a4: Hu Xu, Wei Chen, Belinda Z. Li, Alexey Dosovitskiy, John A. Hodge, Ryan Martin, Haima Zhang, Shaohua Tan, Alex Tamkin, Lucas Beyer, Kumar Vijay Mishra
+63ef8fcef7ec4e0d8d2d5bba: Haima Zhang, Hu Xu, Shaohua Tan, Wei Chen, Alex Tamkin, Belinda Z. Li, Lucas Beyer, Alexey Dosovitskiy, Kumar Vijay Mishra, John A. Hodge, Ryan Martin
+Aligned: 0/3, Agreed: 0/1
+
+*******The table of articles*******
+article_id, article_title, title_word_count, author_count, reference_count
+ce16e55e361873f8a7256ab9e8e1a3af0290c3cb, High-Performance Wafer-Scale MoS2 Transistors toward Practical Application., 7, 15, 67
+2cdee00c8debb43b6f7c968819dc7ec81ff992f3, Worst-case VaR and robust portfolio optimization with interval random uncertainty set, 11, 3, 14
+b4ba53eca9c286c8ba4e06f83bf20ee0145af1c0, ELICITING HUMAN PREFERENCES WITH LANGUAGE MODELS, 6, 4, 59
+268d347e8a55b5eb82fb5e7d2f800e33c75ab18a, An Image is Worth 16x16 Words: Transformers for Image Recognition at Scale, 12, 12, 58
+15ff202be9f44e88594544a7f40335bc23bae4a3, Intelligent Time-Varying Metasurface Transceiver for Index Modulation in 6G Wireless Networks, 11, 3, 46
+6d82e7a9121e71f0dafabcec3abb2b713c6739c7, A possibility-theoretic solution to Basu's Bayesian-frequentist via media, 8, 1, 65
+
+*******The table of article-author relationship*******
+article_id, author_name, author_position
+ce16e55e361873f8a7256ab9e8e1a3af0290c3cb, Hu Xu, 0
+ce16e55e361873f8a7256ab9e8e1a3af0290c3cb, Haima Zhang, 1
+ce16e55e361873f8a7256ab9e8e1a3af0290c3cb, Zhongxun Guo, 2
+ce16e55e361873f8a7256ab9e8e1a3af0290c3cb, Yuwei Shan, 3
+ce16e55e361873f8a7256ab9e8e1a3af0290c3cb, Shiwei Wu, 4
+ce16e55e361873f8a7256ab9e8e1a3af0290c3cb, Jianlu Wang, 5
+ce16e55e361873f8a7256ab9e8e1a3af0290c3cb, Weida Hu, 6
+ce16e55e361873f8a7256ab9e8e1a3af0290c3cb, Hanqi Liu, 7
+ce16e55e361873f8a7256ab9e8e1a3af0290c3cb, Zhengzong Sun, 8
+ce16e55e361873f8a7256ab9e8e1a3af0290c3cb, Chen Luo, 9
+ce16e55e361873f8a7256ab9e8e1a3af0290c3cb, Xing Wu, 10
+ce16e55e361873f8a7256ab9e8e1a3af0290c3cb, Zihan Xu, 11
+ce16e55e361873f8a7256ab9e8e1a3af0290c3cb, David Wei Zhang, 12
+ce16e55e361873f8a7256ab9e8e1a3af0290c3cb, Wenzhong Bao, 13
+ce16e55e361873f8a7256ab9e8e1a3af0290c3cb, Peng Zhou, 14
+2cdee00c8debb43b6f7c968819dc7ec81ff992f3, Wei Chen, 0
+2cdee00c8debb43b6f7c968819dc7ec81ff992f3, Shaohua Tan, 1
+2cdee00c8debb43b6f7c968819dc7ec81ff992f3, Dongqing Yang, 2
+b4ba53eca9c286c8ba4e06f83bf20ee0145af1c0, Belinda Z. Li, 0
+b4ba53eca9c286c8ba4e06f83bf20ee0145af1c0, Alex Tamkin, 1
+b4ba53eca9c286c8ba4e06f83bf20ee0145af1c0, Noah Goodman, 2
+b4ba53eca9c286c8ba4e06f83bf20ee0145af1c0, Jacob Andreas, 3
+268d347e8a55b5eb82fb5e7d2f800e33c75ab18a, Alexey Dosovitskiy, 0
+268d347e8a55b5eb82fb5e7d2f800e33c75ab18a, Lucas Beyer, 1
+268d347e8a55b5eb82fb5e7d2f800e33c75ab18a, Alexander Kolesnikov, 2
+268d347e8a55b5eb82fb5e7d2f800e33c75ab18a, Dirk Weissenborn, 3
+268d347e8a55b5eb82fb5e7d2f800e33c75ab18a, Xiaohua Zhai, 4
+268d347e8a55b5eb82fb5e7d2f800e33c75ab18a, Thomas Unterthiner, 5
+268d347e8a55b5eb82fb5e7d2f800e33c75ab18a, Mostafa Dehghani, 6
+268d347e8a55b5eb82fb5e7d2f800e33c75ab18a, Matthias Minderer, 7
+268d347e8a55b5eb82fb5e7d2f800e33c75ab18a, Georg Heigold, 8
+268d347e8a55b5eb82fb5e7d2f800e33c75ab18a, Sylvain Gelly, 9
+268d347e8a55b5eb82fb5e7d2f800e33c75ab18a, Jakob Uszkoreit, 10
+268d347e8a55b5eb82fb5e7d2f800e33c75ab18a, Neil Houlsby, 11
+15ff202be9f44e88594544a7f40335bc23bae4a3, John A. Hodge, 0
+15ff202be9f44e88594544a7f40335bc23bae4a3, Kumar Vijay Mishra, 1
+15ff202be9f44e88594544a7f40335bc23bae4a3, Amir I. Zaghloul, 2
+6d82e7a9121e71f0dafabcec3abb2b713c6739c7, Ryan Martin, 0
+
+*******The table of citation relationship among the articles*******
+article_id_citing, article_id_cited
+
+############################# Sample ID 38 #################################
+SQL type: multi_ran_organizing
+Question: How many authors are there for each article, sorted by the number of references in descending order?
+SQL query: SELECT author_count FROM articles ORDER BY reference_count DESC;
+Answer: 4, 3, 7, 3, 4, 4
+67878e264046b71df4ad64af: 173, 81, 41, 37, 32, 15
+65aea1ad4ec9136d74dc5095: 173, 81, 41, 37, 32, 15
+65639c2f102822f13aa7531c: 4, 3, 7, 3, 4, 4
+Aligned: 1/3, Agreed: 1/1
+
+*******The table of articles*******
+article_id, article_title, title_word_count, author_count, reference_count
+ca7f542857a0b50790c60a6a5ed6c66d87d5d1ea, HoneyGPT: Breaking the Trilemma in Honeypots with Large Language Models, 10, 7, 41
+dc43ed17d2e0761552ea8dcf3cce6d2ece042df7, Large Language Models for Networking: Workflow, Advances and Challenges, 9, 4, 15
+b260a0263589324aa02adf4adecc211e44931536, Enhancing Autonomous System Security and Resilience With Generative AI: A Comprehensive Survey, 12, 4, 173
+59e00b068054ff89806b0f0d12abcc4dad832a0a, Spatiotemporal Binary Acoustic Metasurfaces, 4, 3, 81
+a50ee01a66aa92b664a78b2a0628ac346f53e31d, CLIMATEBERT: A Pretrained Language Model for Climate-Related Text, 8, 4, 32
+c42a5749e5851b4c7e0decaa72d0ebbb84563ed2, Geometry of 1-lightlike submanifolds in anti-de Sitter n-space, 8, 3, 37
+
+*******The table of article-author relationship*******
+article_id, author_name, author_position
+ca7f542857a0b50790c60a6a5ed6c66d87d5d1ea, Ziyang Wang, 0
+ca7f542857a0b50790c60a6a5ed6c66d87d5d1ea, Tianwei Yuan, 1
+ca7f542857a0b50790c60a6a5ed6c66d87d5d1ea, Yang Wang, 2
+ca7f542857a0b50790c60a6a5ed6c66d87d5d1ea, Jianzhou You, 3
+ca7f542857a0b50790c60a6a5ed6c66d87d5d1ea, Haining Wang, 4
+ca7f542857a0b50790c60a6a5ed6c66d87d5d1ea, Shichao Lv, 5
+ca7f542857a0b50790c60a6a5ed6c66d87d5d1ea, Limin Sun, 6
+dc43ed17d2e0761552ea8dcf3cce6d2ece042df7, Chang Liu, 0
+dc43ed17d2e0761552ea8dcf3cce6d2ece042df7, Xiaohui Xie, 1
+dc43ed17d2e0761552ea8dcf3cce6d2ece042df7, Xinggong Zhang, 2
+dc43ed17d2e0761552ea8dcf3cce6d2ece042df7, Yong Cui, 3
+b260a0263589324aa02adf4adecc211e44931536, MARTIN ANDREONI, 0
+b260a0263589324aa02adf4adecc211e44931536, WILLIAN TESSARO LUNARDI, 1
+b260a0263589324aa02adf4adecc211e44931536, GEORGE LAWTON, 2
+b260a0263589324aa02adf4adecc211e44931536, SHREEKANT THAKKAR, 3
+59e00b068054ff89806b0f0d12abcc4dad832a0a, Mohammad Hosein Fakheri, 0
+59e00b068054ff89806b0f0d12abcc4dad832a0a, Hamid Rajabalipanah, 1
+59e00b068054ff89806b0f0d12abcc4dad832a0a, Ali Abdolali, 2
+a50ee01a66aa92b664a78b2a0628ac346f53e31d, Nicolas Webersinke, 0
+a50ee01a66aa92b664a78b2a0628ac346f53e31d, Mathias Kraus, 1
+a50ee01a66aa92b664a78b2a0628ac346f53e31d, Julia Anna Bingler, 2
+a50ee01a66aa92b664a78b2a0628ac346f53e31d, Markus Leippold, 3
+c42a5749e5851b4c7e0decaa72d0ebbb84563ed2, Zhigang Wang, 0
+c42a5749e5851b4c7e0decaa72d0ebbb84563ed2, Donghe Pei, 1
+c42a5749e5851b4c7e0decaa72d0ebbb84563ed2, Liang Chen, 2
+
+*******The table of citation relationship among the articles*******
+article_id_citing, article_id_cited
+
+############################# Sample ID 55 #################################
+SQL type: multi_graph_filtering
+Question: What is the number of references cited in the article that has the highest number of citations?
+SQL query: SELECT reference_count FROM articles WHERE article_id IN (SELECT article_id_cited FROM citing_cited GROUP BY article_id_cited HAVING COUNT(*) = (SELECT MAX(citation_count) FROM (SELECT COUNT(*) AS citation_count FROM citing_cited GROUP BY article_id_cited)))
+Answer: 53
+63b5681c49af1cbe651420bc: 121
+5f63a7b708a0080d2e2bbaab: 3
+5bedbdf6dd71a00001e5cb0a: 121
+Aligned: 0/3, Agreed: 1/1
+
+*******The table of articles*******
+article_id, article_title, title_word_count, author_count, reference_count
+ce7955be003a942b11e381fcc0dfac2ee161f56e, High Electric Field Transport Characteristics in Field-Effect Transistors Based on Monolayer/Few-Layer MoS2, 12, 1, 121
+4941e56b145a3b7719766916cc9a65940cdb55b2, A microprocessor based on a two-dimensional semiconductor, 7, 4, 32
+8a44a59ec87b903449b43d63775a9f6e4da604c0, Approaching the Schottky-Mott limit in van der Waals metal-semiconductor junctions, 10, 10, 53
+acad3012818975c710d6a32de0d93e651e5b3b07, Van der Waals contacts between three-dimensional metals and two-dimensional semiconductors, 10, 10, 48
+
+*******The table of article-author relationship*******
+article_id, author_name, author_position
+ce7955be003a942b11e381fcc0dfac2ee161f56e, Weifeng Jin, 0
+4941e56b145a3b7719766916cc9a65940cdb55b2, Stefan Wachter, 0
+4941e56b145a3b7719766916cc9a65940cdb55b2, Dmitry K. Polyushkin, 1
+4941e56b145a3b7719766916cc9a65940cdb55b2, Ole Bethge, 2
+4941e56b145a3b7719766916cc9a65940cdb55b2, Thomas Mueller, 3
+8a44a59ec87b903449b43d63775a9f6e4da604c0, Yuan Liu, 0
+8a44a59ec87b903449b43d63775a9f6e4da604c0, Jian Guo, 1
+8a44a59ec87b903449b43d63775a9f6e4da604c0, Enbo Zhu, 2
+8a44a59ec87b903449b43d63775a9f6e4da604c0, Lei Liao, 3
+8a44a59ec87b903449b43d63775a9f6e4da604c0, Sung-Joon Lee, 4
+8a44a59ec87b903449b43d63775a9f6e4da604c0, Mengning Ding, 5
+8a44a59ec87b903449b43d63775a9f6e4da604c0, Imran Shakir, 6
+8a44a59ec87b903449b43d63775a9f6e4da604c0, Vincent Gambin, 7
+8a44a59ec87b903449b43d63775a9f6e4da604c0, Yu Huang, 8
+8a44a59ec87b903449b43d63775a9f6e4da604c0, Xiangfeng Duan, 9
+acad3012818975c710d6a32de0d93e651e5b3b07, Yan Wang, 0
+acad3012818975c710d6a32de0d93e651e5b3b07, Jong Chan Kim, 1
+acad3012818975c710d6a32de0d93e651e5b3b07, Ryan J. Wu, 2
+acad3012818975c710d6a32de0d93e651e5b3b07, Jenny Martinez, 3
+acad3012818975c710d6a32de0d93e651e5b3b07, Xiuju Song, 4
+acad3012818975c710d6a32de0d93e651e5b3b07, Jieun Yang, 5
+acad3012818975c710d6a32de0d93e651e5b3b07, Fang Zhao, 6
+acad3012818975c710d6a32de0d93e651e5b3b07, Andre Mkhoyan, 7
+acad3012818975c710d6a32de0d93e651e5b3b07, Hu Young Jeong, 8
+acad3012818975c710d6a32de0d93e651e5b3b07, Manish Chhowalla, 9
+
+*******The table of citation relationship among the articles*******
+article_id_citing, article_id_cited
+ce7955be003a942b11e381fcc0dfac2ee161f56e, acad3012818975c710d6a32de0d93e651e5b3b07
+ce7955be003a942b11e381fcc0dfac2ee161f56e, 8a44a59ec87b903449b43d63775a9f6e4da604c0
+ce7955be003a942b11e381fcc0dfac2ee161f56e, 4941e56b145a3b7719766916cc9a65940cdb55b2
+acad3012818975c710d6a32de0d93e651e5b3b07, 8a44a59ec87b903449b43d63775a9f6e4da604c0
+
+############################# Sample ID 15 #################################
+SQL type: multi_ran_filtering_foa
+Question: How many articles have more than 104 references?
+SQL query: SELECT COUNT(article_title) FROM articles WHERE reference_count > 104;
+Answer: 1
+637e4351f6c7592941500be6: 2
+5c852c65f8e57d00158a12ca: 1
+654a86d08714f739c9fcea21: 2
+Aligned: 1/3, Agreed: 1/1
+
+*******The table of articles*******
+article_id, article_title, title_word_count, author_count, reference_count
+79ae29f47531295b121135dc8994d2657248025b, Design Issues for Generalized Linear Models: A Review, 8, 4, 104
+66859fb782c50eaa037c48c29249625eff56fc40, On the Topology of Warped Product Pointwise Semi-Slant Submanifolds with Positive Curvature, 12, 4, 32
+ce16e55e361873f8a7256ab9e8e1a3af0290c3cb, High-Performance Wafer-Scale MoS2 Transistors toward Practical Application., 7, 15, 67
+7ae9eab5667cece3cbf5e6bec88e2aa0e066c02b, Flat optics with designer metasurfaces, 5, 2, 108
+f049751103f13d1ce6080418813e2a26820713e1, Driller: Augmenting Fuzzing Through Selective Symbolic Execution, 7, 9, 31
+a50ee01a66aa92b664a78b2a0628ac346f53e31d, CLIMATEBERT: A Pretrained Language Model for Climate-Related Text, 8, 4, 32
+
+*******The table of article-author relationship*******
+article_id, author_name, author_position
+79ae29f47531295b121135dc8994d2657248025b, Andre I. Khuri, 0
+79ae29f47531295b121135dc8994d2657248025b, Bhramar Mukherjee, 1
+79ae29f47531295b121135dc8994d2657248025b, Bikas K.Sinha, 2
+79ae29f47531295b121135dc8994d2657248025b, Malay Ghosh, 3
+66859fb782c50eaa037c48c29249625eff56fc40, Yanlin Li, 0
+66859fb782c50eaa037c48c29249625eff56fc40, Ali H. Alkhaldi, 1
+66859fb782c50eaa037c48c29249625eff56fc40, Akram Ali, 2
+66859fb782c50eaa037c48c29249625eff56fc40, Pişcoran Laurian-Ioan, 3
+ce16e55e361873f8a7256ab9e8e1a3af0290c3cb, Hu Xu, 0
+ce16e55e361873f8a7256ab9e8e1a3af0290c3cb, Haima Zhang, 1
+ce16e55e361873f8a7256ab9e8e1a3af0290c3cb, Zhongxun Guo, 2
+ce16e55e361873f8a7256ab9e8e1a3af0290c3cb, Yuwei Shan, 3
+ce16e55e361873f8a7256ab9e8e1a3af0290c3cb, Shiwei Wu, 4
+ce16e55e361873f8a7256ab9e8e1a3af0290c3cb, Jianlu Wang, 5
+ce16e55e361873f8a7256ab9e8e1a3af0290c3cb, Weida Hu, 6
+ce16e55e361873f8a7256ab9e8e1a3af0290c3cb, Hanqi Liu, 7
+ce16e55e361873f8a7256ab9e8e1a3af0290c3cb, Zhengzong Sun, 8
+ce16e55e361873f8a7256ab9e8e1a3af0290c3cb, Chen Luo, 9
+ce16e55e361873f8a7256ab9e8e1a3af0290c3cb, Xing Wu, 10
+ce16e55e361873f8a7256ab9e8e1a3af0290c3cb, Zihan Xu, 11
+ce16e55e361873f8a7256ab9e8e1a3af0290c3cb, David Wei Zhang, 12
+ce16e55e361873f8a7256ab9e8e1a3af0290c3cb, Wenzhong Bao, 13
+ce16e55e361873f8a7256ab9e8e1a3af0290c3cb, Peng Zhou, 14
+7ae9eab5667cece3cbf5e6bec88e2aa0e066c02b, Nanfang Yu, 0
+7ae9eab5667cece3cbf5e6bec88e2aa0e066c02b, Federico Capasso, 1
+f049751103f13d1ce6080418813e2a26820713e1, Nick Stephens, 0
+f049751103f13d1ce6080418813e2a26820713e1, John Grosen, 1
+f049751103f13d1ce6080418813e2a26820713e1, Christopher Salls, 2
+f049751103f13d1ce6080418813e2a26820713e1, Andrew Dutcher, 3
+f049751103f13d1ce6080418813e2a26820713e1, Ruoyu Wang, 4
+f049751103f13d1ce6080418813e2a26820713e1, Jacopo Corbetta, 5
+f049751103f13d1ce6080418813e2a26820713e1, Yan Shoshitaishvili, 6
+f049751103f13d1ce6080418813e2a26820713e1, Christopher Kruegel, 7
+f049751103f13d1ce6080418813e2a26820713e1, Giovanni Vigna, 8
+a50ee01a66aa92b664a78b2a0628ac346f53e31d, Nicolas Webersinke, 0
+a50ee01a66aa92b664a78b2a0628ac346f53e31d, Mathias Kraus, 1
+a50ee01a66aa92b664a78b2a0628ac346f53e31d, Julia Anna Bingler, 2
+a50ee01a66aa92b664a78b2a0628ac346f53e31d, Markus Leippold, 3
+
+*******The table of citation relationship among the articles*******
+article_id_citing, article_id_cited
+
+############################# Sample ID 53 #################################
+SQL type: multi_ran_filtering_foa
+Question: What are the names of distinct authors who are listed as one of the first five authors on any article?
+SQL query: SELECT DISTINCT author_name FROM article_author WHERE author_position <= 4;
+Answer: Peng Tong, Juan Liu, Xijun Wang, Bo Bai, Huaiyu Dai, B. Fleury, O. Guédon, G. Paouris, Haihan Duan, Jiaye Li, Sizheng Fan, Zhonghao Lin, Xiao Wu, Robert BOYD, Peter J. RICHERSON
+644bc265cb8a19eab3311bab: Peng Tong, B. Fleury, Haihan Duan, Robert BOYD
+6550ddd43097bf717a4a7501: Peng Tong, Juan Liu, Xijun Wang, Bo Bai, Huaiyu Dai, B. Fleury, O. Guédon, G. Paouris, Haihan Duan Jiaye Li, Sizheng Fan, Zhonghao Lin, Xiao Wu, Robert BOYD, Peter J. RICHERSON
+63d3ff28c338c75425b282b9: Tong, Liu, Wang, Bai, Dai
+Aligned: 1/3, Agreed: 0/1
+
+*******The table of articles*******
+article_id, article_title, title_word_count, author_count, reference_count
+4dfd48d1df1909bdcd7f42617c00a110fd0c3210, Deep Reinforcement Learning for Efficient Data Collection in UAV-Aided Internet of Things, 12, 5, 16
+46cc439d3ac7a7d5df66dcca8417f0c314cca54c, A stability result for mean width of Lp-centroid bodies, 9, 3, 21
+38563c99c9671d06172c7db3545ef8aed3071cf5, Metaverse for Social Good: A University Campus Prototype, 8, 6, 27
+138376c5d1ca16689b589ff035c594eafe785ae9, THE EVOLUTION OF INDIRECT RECIPROCITY, 5, 2, 33
+
+*******The table of article-author relationship*******
+article_id, author_name, author_position
+4dfd48d1df1909bdcd7f42617c00a110fd0c3210, Peng Tong, 0
+4dfd48d1df1909bdcd7f42617c00a110fd0c3210, Juan Liu, 1
+4dfd48d1df1909bdcd7f42617c00a110fd0c3210, Xijun Wang, 2
+4dfd48d1df1909bdcd7f42617c00a110fd0c3210, Bo Bai, 3
+4dfd48d1df1909bdcd7f42617c00a110fd0c3210, Huaiyu Dai, 4
+46cc439d3ac7a7d5df66dcca8417f0c314cca54c, B. Fleury, 0
+46cc439d3ac7a7d5df66dcca8417f0c314cca54c, O. Guédon, 1
+46cc439d3ac7a7d5df66dcca8417f0c314cca54c, G. Paouris, 2
+38563c99c9671d06172c7db3545ef8aed3071cf5, Haihan Duan, 0
+38563c99c9671d06172c7db3545ef8aed3071cf5, Jiaye Li, 1
+38563c99c9671d06172c7db3545ef8aed3071cf5, Sizheng Fan, 2
+38563c99c9671d06172c7db3545ef8aed3071cf5, Zhonghao Lin, 3
+38563c99c9671d06172c7db3545ef8aed3071cf5, Xiao Wu, 4
+38563c99c9671d06172c7db3545ef8aed3071cf5, Wei Cai, 5
+138376c5d1ca16689b589ff035c594eafe785ae9, Robert BOYD, 0
+138376c5d1ca16689b589ff035c594eafe785ae9, Peter J. RICHERSON, 1
+
+*******The table of citation relationship among the articles*******
+article_id_citing, article_id_cited
+
+############################# Sample ID 120 #################################
+SQL type: multi_ran_organizing
+Question: What are the titles of the articles listed in descending order of the number of authors?
+SQL query: SELECT article_title FROM articles ORDER BY author_count DESC;
+Answer: Solipsis: A Decentralized Architecture for Virtual Environments, Testing exchangeability: fork-convexity, supermartingales, and e-processes, Strategy evolution on higher-order networks, Analyst Information Discovery and Interpretation Roles: A Topic Modeling Approach, Learning to Parse Database Queries Using Inductive Logic Programming
+63f9c81dc81ca7c373e0a7c0: Solipsis: A Decentralized Architecture for Virtual Environments
+59d6b8f103203500011ace12: Solipsis: A Decentralized Architecture for Virtual Environments, Analyst Information Discovery and Interpretation Roles: A Topic Modeling Approach, Strategy evolution on higher-order networks, Testing exchangeability: fork-convexity, supermartingales, and e-processes, Learning to Parse Database Queries Using Inductive Logic Programming
+5d667a1a3741ea0001c719b9: Solipsis: A Decentralized Architecture for Virtual Environments, Testing exchangeability: fork-convexity, supermartingales, and e-processes, Strategy evolution on higher-order networks, Analyst Information Discovery and Interpretation Roles: A Topic Modeling Approach, Learning to Parse Database Queries Using Inductive Logic Programming
+Aligned: 1/3, Agreed: 0/1
+
+*******The table of articles*******
+article_id, article_title, title_word_count, author_count, reference_count
+ff848ddcea4cdede4c5aef7ab211f9e26fc6fbd6, Testing exchangeability: fork-convexity, supermartingales, and e-processes, 6, 4, 46
+1df803bd7ab3334f1f764c3f0cca2ce01474c80d, Strategy evolution on higher-order networks, 5, 4, 75
+a98ca144a2afa4f36ea643120d0566e7064c5dea, Analyst Information Discovery and Interpretation Roles: A Topic Modeling Approach, 10, 4, 65
+b3d43a199e1f1b3971e28b4fd50f69bf0942d075, Solipsis: A Decentralized Architecture for Virtual Environments, 7, 6, 22
+b7c0e47f8b768258b7d536c21b218e6c46ab8791, Learning to Parse Database Queries Using Inductive Logic Programming, 9, 2, 19
+
+*******The table of article-author relationship*******
+article_id, author_name, author_position
+ff848ddcea4cdede4c5aef7ab211f9e26fc6fbd6, Aaditya Ramdas, 0
+ff848ddcea4cdede4c5aef7ab211f9e26fc6fbd6, Johannes Ruf, 1
+ff848ddcea4cdede4c5aef7ab211f9e26fc6fbd6, Martin Larsson, 2
+ff848ddcea4cdede4c5aef7ab211f9e26fc6fbd6, Wouter M. Koolen, 3
+1df803bd7ab3334f1f764c3f0cca2ce01474c80d, Anzhi Sheng, 0
+1df803bd7ab3334f1f764c3f0cca2ce01474c80d, Qi Su, 1
+1df803bd7ab3334f1f764c3f0cca2ce01474c80d, Long Wang, 2
+1df803bd7ab3334f1f764c3f0cca2ce01474c80d, Joshua B. Plotkin, 3
+a98ca144a2afa4f36ea643120d0566e7064c5dea, Allen Huang, 0
+a98ca144a2afa4f36ea643120d0566e7064c5dea, Reuven Lehavy, 1
+a98ca144a2afa4f36ea643120d0566e7064c5dea, Amy Zang, 2
+a98ca144a2afa4f36ea643120d0566e7064c5dea, Rong Zheng, 3
+b3d43a199e1f1b3971e28b4fd50f69bf0942d075, Davide Frey, 0
+b3d43a199e1f1b3971e28b4fd50f69bf0942d075, Jérôme Royan, 1
+b3d43a199e1f1b3971e28b4fd50f69bf0942d075, Romain Piegay, 2
+b3d43a199e1f1b3971e28b4fd50f69bf0942d075, Anne-Marie Kermarrec, 3
+b3d43a199e1f1b3971e28b4fd50f69bf0942d075, Emmanuelle Anceaume, 4
+b3d43a199e1f1b3971e28b4fd50f69bf0942d075, Fabrice Le Fessant, 5
+b7c0e47f8b768258b7d536c21b218e6c46ab8791, John M. Zelle, 0
+b7c0e47f8b768258b7d536c21b218e6c46ab8791, Raymond J. Mooney, 1
+
+*******The table of citation relationship among the articles*******
+article_id_citing, article_id_cited
+
+############################# Sample ID 13 #################################
+SQL type: multi_ran_filtering_ofo
+Question: Which authors are listed in even-numbered positions among the authors of articles, counting the first author as position zero?
+SQL query: SELECT author_name FROM article_author WHERE author_position % 2 = 0;
+Answer: Shuming Wang, Vin-Cent Su, Cheng Hung Chu, Shen-Hung Lu, Beibei Xu, Tao Li, Din Ping Tsai, Yue Zhang, Xiankun Zhang, Li Gao, Mengyu Hong, Zheng Zhang, Kun Huang, Mohan Wang, Tongtong Jiang, Elena Mikheeva, Fouad Bentata, Sébastien Cueff, Willie Neiswanger, Yanlin Li, Santu Dey
+5efbe3c91cb67519d2f20b7b: Wang, Su, Chu, Lu, Xu, Li, Tsai, Wei, Yu, Tang, Wang, Wu, Kyrou, Khadir, Genevet, Ramdas, Ganguly, Bhattacharyya
+616829767ddec9e42886501d: Pin Chieh Wu, Xiaofu Wei, Kun Tang, Christina Kyrou, Aaditya Ramdas, Dipen Ganguly, Yi-Chieh Lai, Huihui Yu, Yujiao Wang, Samira Khadir, Arindam Bhattacharyya, Jia-Wern Chen, Wenhui Tang, Mingzai Wu, Patrice Genevet, Ji Chen, Zhangyi Chen, Chieh-Hsiung Kuan, Zhuo Kang, Shining Zhu
+601e1253bbecc3279e4fb472: Shuming Wang, Vin-Cent Su, Cheng Hung Chu, Shen-Hung Lu, Beibei Xu, Tao Li, Din Ping Tsai, Yue Zhang, Xiankun Zhang, Li Gao, Mengyu Hong, Zheng Zhang, Kun Huang, Mohan Wang, Tongtong Jiang, Elena Mikheeva, Fouad Bentata, Sébastien Cueff, Willie Neiswanger, Yanlin Li, Santu Dey
+Aligned: 1/3, Agreed: 0/1
+
+*******The table of articles*******
+article_id, article_title, title_word_count, author_count, reference_count
+74931df2f9bb31b8b90daa95a8e134dd42149f0e, Broadband achromatic optical metasurface devices, 5, 13, 45
+89b15d2fdf42d86e9771d9d9b49a9072df6388d0, Homojunction-loaded inverters based on self-biased molybdenum disulfide transistors for sub-picowatt computing, 11, 10, 39
+5eb12142820c1a88bd4eb720555e7b959462cd37, Boosting Nitrate to Ammonia via the Optimization of Key Intermediate Processes by Low-Coordinated Cu-Cu Sites, 15, 6, 33
+b17398079e576f9f50e4fcf3a68385e2c6cd7f02, Space and Time Modulations of Light with Metasurfaces: Recent Progress and Future Prospects, 13, 6, 226
+7641d3a29f9e0a7c52c7962d350a2bd4b54c2ee8, Uncertainty quantification using martingales for misspecified Gaussian processes, 8, 2, 31
+ceb32d2fd8952a64ebc72e2ba438121660010917, Conformal η-Ricci solitons within the framework of indefinite Kenmotsu manifolds, 10, 4, 56
+
+*******The table of article-author relationship*******
+article_id, author_name, author_position
+74931df2f9bb31b8b90daa95a8e134dd42149f0e, Shuming Wang, 0
+74931df2f9bb31b8b90daa95a8e134dd42149f0e, Pin Chieh Wu, 1
+74931df2f9bb31b8b90daa95a8e134dd42149f0e, Vin-Cent Su, 2
+74931df2f9bb31b8b90daa95a8e134dd42149f0e, Yi-Chieh Lai, 3
+74931df2f9bb31b8b90daa95a8e134dd42149f0e, Cheng Hung Chu, 4
+74931df2f9bb31b8b90daa95a8e134dd42149f0e, Jia-Wern Chen, 5
+74931df2f9bb31b8b90daa95a8e134dd42149f0e, Shen-Hung Lu, 6
+74931df2f9bb31b8b90daa95a8e134dd42149f0e, Ji Chen, 7
+74931df2f9bb31b8b90daa95a8e134dd42149f0e, Beibei Xu, 8
+74931df2f9bb31b8b90daa95a8e134dd42149f0e, Chieh-Hsiung Kuan, 9
+74931df2f9bb31b8b90daa95a8e134dd42149f0e, Tao Li, 10
+74931df2f9bb31b8b90daa95a8e134dd42149f0e, Shining Zhu, 11
+74931df2f9bb31b8b90daa95a8e134dd42149f0e, Din Ping Tsai, 12
+89b15d2fdf42d86e9771d9d9b49a9072df6388d0, Yue Zhang, 0
+89b15d2fdf42d86e9771d9d9b49a9072df6388d0, Xiaofu Wei, 1
+89b15d2fdf42d86e9771d9d9b49a9072df6388d0, Xiankun Zhang, 2
+89b15d2fdf42d86e9771d9d9b49a9072df6388d0, Huihui Yu, 3
+89b15d2fdf42d86e9771d9d9b49a9072df6388d0, Li Gao, 4
+89b15d2fdf42d86e9771d9d9b49a9072df6388d0, Wenhui Tang, 5
+89b15d2fdf42d86e9771d9d9b49a9072df6388d0, Mengyu Hong, 6
+89b15d2fdf42d86e9771d9d9b49a9072df6388d0, Zhangyi Chen, 7
+89b15d2fdf42d86e9771d9d9b49a9072df6388d0, Zheng Zhang, 8
+89b15d2fdf42d86e9771d9d9b49a9072df6388d0, Zhuo Kang, 9
+5eb12142820c1a88bd4eb720555e7b959462cd37, Kun Huang, 0
+5eb12142820c1a88bd4eb720555e7b959462cd37, Kun Tang, 1
+5eb12142820c1a88bd4eb720555e7b959462cd37, Mohan Wang, 2
+5eb12142820c1a88bd4eb720555e7b959462cd37, Yujiao Wang, 3
+5eb12142820c1a88bd4eb720555e7b959462cd37, Tongtong Jiang, 4
+5eb12142820c1a88bd4eb720555e7b959462cd37, Mingzai Wu, 5
+b17398079e576f9f50e4fcf3a68385e2c6cd7f02, Elena Mikheeva, 0
+b17398079e576f9f50e4fcf3a68385e2c6cd7f02, Christina Kyrou, 1
+b17398079e576f9f50e4fcf3a68385e2c6cd7f02, Fouad Bentata, 2
+b17398079e576f9f50e4fcf3a68385e2c6cd7f02, Samira Khadir, 3
+b17398079e576f9f50e4fcf3a68385e2c6cd7f02, Sébastien Cueff, 4
+b17398079e576f9f50e4fcf3a68385e2c6cd7f02, Patrice Genevet, 5
+7641d3a29f9e0a7c52c7962d350a2bd4b54c2ee8, Willie Neiswanger, 0
+7641d3a29f9e0a7c52c7962d350a2bd4b54c2ee8, Aaditya Ramdas, 1
+ceb32d2fd8952a64ebc72e2ba438121660010917, Yanlin Li, 0
+ceb32d2fd8952a64ebc72e2ba438121660010917, Dipen Ganguly, 1
+ceb32d2fd8952a64ebc72e2ba438121660010917, Santu Dey, 2
+ceb32d2fd8952a64ebc72e2ba438121660010917, Arindam Bhattacharyya, 3
+
+*******The table of citation relationship among the articles*******
+article_id_citing, article_id_cited

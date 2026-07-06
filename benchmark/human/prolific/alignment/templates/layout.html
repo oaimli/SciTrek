@@ -1,0 +1,35 @@
+<div class="row">
+  <div class="alert alert-success" role="alert" style="user-select: none;">
+      <p class="m-2"><strong>You may refer to the following introduction of the tables when understanding them.</strong></p>
+      <br>
+      <p class="m-2">Table 1 contains meta information of articles, with the following columns:</p>
+      <p class="m-2">- article_id: the unique identifier of the article;</p>
+      <p class="m-2">- article_title: the title of the article;</p>
+      <p class="m-2">- title_word_count: the number of words in the article's title;</p>
+      <p class="m-2">- author_count: the number of authors for the article;</p>
+      <p class="m-2">- reference_count: the number of references cited in the article.</p>
+      <br>
+      <p class="m-2">Table 2 contains author information of the articles, with the following columns:</p>
+      <p class="m-2">- article_id: the identifier of the associated article;</p>
+      <p class="m-2">- author_name: the name of the author;</p>
+      <p class="m-2">- author_position: the position of the author in the author list (starting from 0 for the first author).</p>
+      <br>
+      <p class="m-2">Table 3 contains citation relations among the articles, with the following columns:</p>
+      <p class="m-2">- article_id_citing: the identifier of the article which cites the other article;</p>
+      <p class="m-2">- article_id_cited: the identifier of the article which is cited by the other article.</p>
+      <br>
+      <p class="m-2">All the tables can contain multiple entries, while Table 3 may contain no entries; Table 2 maps authors to articles in Table 1, i.e., one author can contribute to multiple articles and one article can have multiple authors; and Table 3 represents citation relationships among articles in Table 1, where one article can be cited by multiple others.</p>
+  </div>
+
+  <div class="row" style="background-color: white;">
+    {{instance | safe}}
+  </div>
+
+  <div style="height: 15px;" />
+  </div>
+  <div class="row">
+
+    {{annotation_schematic}}
+
+</div>
+</div>
