@@ -131,6 +131,8 @@ You can see the evaluation pipeline in eval_test/evaluating_generations.py, and 
 
 ### Post-training open-weight LLMs with SciTrek
 
+For post-training with supervised fine-tuning (SFT) and Reinforcement Learning with Verifiable Rewards (RLVR), refer to the folder of train_full.
+
 If you are going to use our dataset to test or train your model, please cite our paper:
 
 [Li et al. 2025] Miao Li, Alexander Gurung, Irina Saparina, Mirella Lapata. "Who Gets Cited Most? Benchmarking Long-Context Numerical Reasoning on Scientific Articles". arXiv 2509.21028, 2025.
