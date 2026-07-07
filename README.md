@@ -4,7 +4,7 @@
 
 The benchmark is based on long-context question answering over scientific articles, where the input is multiple full-text scientific articles and a question focused on numerical reasoning, and the output is the answer to the question. For more details on data curation, refer to the paper. 
 
-Each sample of our data is composed of the following key-value pairs:
+Each sample in our data is composed of the following key-value pairs:
 ```text
 # 'articles': article ids that comprise the context (corresponds to benchmark/article/papers_final.json)
 # 'sample_level': the level of the sample and how we concatenate the articles, e.g., multi_ran_64, multi_dfs_64, and multi_bfs_64 (ran: random, bfs: breadth first traversal, dfs: depth first traversal)
