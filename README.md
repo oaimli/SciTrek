@@ -41,7 +41,7 @@ Each sample of our data is composed of the following key-value pairs:
 └── README.md               --> (This readme file)
 ```
 
-### Use the constructed data from Hugging Face
+### Use the SciTrek dataset from Hugging Face
 ```python
 from datasets import load_dataset
 
@@ -109,7 +109,7 @@ for sample in test_dataset:
 
 ``` 
 
-### Construct the data based on local files
+### Use the SciTrek dataset based on downloaded files
 
 First, download the files from [Google Drive](https://drive.google.com/drive/folders/10LoC8ga5qoxK1axDYD_Hxpi9Pv0bz9KN?usp=sharing).
 
@@ -129,7 +129,7 @@ These generation results are from test_full (on full contexts) and test_meta (on
 
 You can see the evaluation pipeline in eval_test/evaluating_generations.py, and also other analyses, including fine-grained error analysis in eval_test.
 
-### Post-training open-weight LLMs with SciTrek
+### Post-training open-weight LLMs on SciTrek
 
 For post-training with supervised fine-tuning (SFT) and Reinforcement Learning with Verifiable Rewards (RLVR), refer to the folder of train_full.
 
