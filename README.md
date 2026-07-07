@@ -111,27 +111,28 @@ for sample in test_dataset:
 
 ### Use the SciTrek dataset based on downloaded files
 
-First, download the files from [Google Drive](https://drive.google.com/drive/folders/10LoC8ga5qoxK1axDYD_Hxpi9Pv0bz9KN?usp=sharing).
+First, download the files from [Google Drive](https://drive.google.com/drive/folders/10LoC8ga5qoxK1axDYD_Hxpi9Pv0bz9KN?usp=sharing), including pdfs, clusters, and samples.
 
 Replace the target folders with the downloaded ones:
 - pdfs -> SciTrek/benchmark/pdfs
 - clusters -> SciTrek/benchmark/dataset/clusters
 - samples -> SciTrek/benchmark/dataset/samples
 
-Then, you will see how to load the data in SciTrek/benchmark/dataset/data_loading.py
+Then, you can load the data following the code in SciTrek/benchmark/dataset/data_loading.py
 
 
 ### Model generations and evaluation results
 
-Download the results_test folder from Google Drive and replace the results_test with it, then you will see model generations in separate JSON Lines files for models.
+Download the results_test folder from the Google Drive link and replace the SciTrek/results_test with it, then you will see model generations in separate JSON Lines files for all experimental models.
 
-These generation results are from test_full (on full contexts) and test_meta (on metadata contexts), running inference of different models.
+These generation results are from SciTrek/test_full (on full contexts) and test_meta (on metadata contexts), running inference for different models.
 
-You can see the evaluation pipeline in eval_test/evaluating_generations.py, and also other analyses, including fine-grained error analysis in eval_test.
+You can see the evaluation pipeline in SciTrek/eval_test/evaluating_generations.py, and other analyses, including fine-grained error analysis in eval_test.
 
 ### Post-training open-weight LLMs on SciTrek
 
-For post-training with supervised fine-tuning (SFT) and Reinforcement Learning with Verifiable Rewards (RLVR), refer to the folder of train_full.
+For post-training with supervised fine-tuning (SFT) and Reinforcement Learning with Verifiable Rewards (RLVR) on SciTrek, refer to the folder of train_full.
+
 
 If you are going to use our dataset to test or train your model, please cite our paper:
 
