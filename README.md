@@ -37,9 +37,22 @@ Each sample in our data is composed of the following key-value pairs:
 ├── results_test/           --> (Generations from the benchmarking models)   
 ├── test_full/              --> (The inference code of models based on full contexts)
 ├── test_meta/              --> (The inference code of models based on metadata contexts)
-├── train_full/             --> (Post-training with SciTrek on open-source models)   
+├── train_full/             --> (Post-training open-source models with SciTrek)   
 └── README.md               --> (This readme file)
 ```
+
+### Explanations on the prompt templates
+
+All our prompt templates can be found in /SciTrek/benchmark/dataset/instructions. Basically, we have chain-of-thought (CoT) and non-reasoning (non-CoT) prompts for both metadata contexts and full contexts.
+
+- instruction_full_scitrek.txt: prompt template on full contexts (models are prompted to directly generate the answer)
+- instruction_meta_scitrek.txt: prompt template on metadata contexts (models are prompted to directly generate the answer)
+- reasoning_instruction_full_scitrek.txt: chain-of-thought prompt template on full contexts
+- reasoning_instruction_meta_scitrek.txt: chain-of-thought prompt template on metadata contexts
+
+In model benchmarking, we used the CoT prompts for thinking models, while we used the non-CoT prompts for non-thinking models.
+
+For post-training, we used CoT prompts for RLVR and non-CoT prompts for SFT for all models.
 
 ### Use the SciTrek dataset from Hugging Face
 ```python
