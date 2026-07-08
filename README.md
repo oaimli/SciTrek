@@ -146,6 +146,7 @@ You can see the evaluation pipeline in SciTrek/eval_test/evaluating_generations.
 
 For post-training with supervised fine-tuning (SFT) and Reinforcement Learning with Verifiable Rewards (RLVR) on SciTrek, refer to the folder of train_full.
 
+### Acknowledgment
 
 If you are going to use our dataset to test or train your model, please cite our paper:
 
