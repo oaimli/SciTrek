@@ -9,7 +9,7 @@ import re
 import sys
 
 sys.path.append("../")
-from bench.dataset.data_loading import load_test, load_articles, get_full_texts
+from benchmark.dataset.data_loading import load_test, load_articles, get_full_texts
 
 if __name__ == "__main__":
     COMPILED_REGEX = re.compile(r"\\boxed\{(.*?)\}")

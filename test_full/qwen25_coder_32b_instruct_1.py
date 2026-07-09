@@ -13,7 +13,7 @@ import sqlite3
 import sys
 
 sys.path.append("../")
-from bench.dataset.data_loading import load_test, load_articles
+from benchmark.dataset.data_loading import load_test, load_articles
 
 
 def constructing_db_gold(cluster_papers):

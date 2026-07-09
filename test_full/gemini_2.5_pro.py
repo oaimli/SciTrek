@@ -8,7 +8,7 @@ from google.genai import types
 
 
 sys.path.append("../")
-from bench.dataset.data_loading import load_test, load_articles, get_full_texts
+from benchmark.dataset.data_loading import load_test, load_articles, get_full_texts
 
 if __name__ == "__main__":
     model_name_official = "gemini-2.5-pro"
@@ -16,7 +16,7 @@ if __name__ == "__main__":
     model_name_save = "gemini25_pro"
     sample_level = "512k"
 
-    articles_all = load_articles(articles_folder="../bench/article/")
+    articles_all = load_articles(articles_folder="../benchmark/article/")
 
     api_key = os.environ["GEMINI_API_KEY"]
     client = genai.Client(api_key=api_key)
@@ -28,7 +28,7 @@ if __name__ == "__main__":
                 samples_test.append(line)
         print("existing results loaded", len(samples_test))
     else:
-        samples_test = load_test(prefix=sample_level, samples_folder="../bench/dataset/samples/final/")
+        samples_test = load_test(prefix=sample_level, samples_folder="../benchmark/dataset/samples/final/")
         print("original samples loaded", len(samples_test))
 
     for sample_index, sample in tqdm(enumerate(samples_test), total=len(samples_test), desc=f"{model_name_save}_{sample_level}"):
@@ -39,7 +39,7 @@ if __name__ == "__main__":
                     markdowns = get_full_texts(sample, articles_all)
 
                     context = "\n".join(markdowns)
-                    instruction = open("../benchmark/dataset/instructions/full_instruction.txt").read()
+                    instruction = open("../benchmark/dataset/instructions/instruction_full_scitrek.txt").read()
                     instruction = instruction.replace("<question>", question)
                     prompt_content = instruction.replace("<articles>", context)
                     response = client.models.generate_content(

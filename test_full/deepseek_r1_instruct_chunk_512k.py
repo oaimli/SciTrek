@@ -9,7 +9,7 @@ import re
 import sys
 
 sys.path.append("../")
-from bench.dataset.data_loading import load_test, load_articles, get_full_texts
+from benchmark.dataset.data_loading import load_test, load_articles, get_full_texts
 
 if __name__ == "__main__":
     random.seed(42)
@@ -21,7 +21,7 @@ if __name__ == "__main__":
     target_mode = "test_full"
     sample_level = "512k"
     vllm_max_model_length = 44032
-    articles_all = load_articles(articles_folder="../bench/article/")
+    articles_all = load_articles(articles_folder="../benchmark/article/")
 
     llm = LLM(model=model_name_official, max_model_len=vllm_max_model_length,
               tensor_parallel_size=vllm_tensor_parallel_size)
@@ -38,7 +38,7 @@ if __name__ == "__main__":
                 samples_test.append(line)
         print("existing results loaded", len(samples_test))
     else:
-        samples_test = load_test(prefix=sample_level, samples_folder="../bench/dataset/samples/final/")
+        samples_test = load_test(prefix=sample_level, samples_folder="../benchmark/dataset/samples/final/")
         samples_test = random.sample(samples_test, 300)
         print("original samples loaded", len(samples_test))
 
@@ -48,7 +48,7 @@ if __name__ == "__main__":
             question = sample["question"]
             markdowns = get_full_texts(sample, articles_all)
             context = "\n".join(markdowns)
-            instruction = open("../benchmark/dataset/instructions/reasoning_instruction.txt").read()
+            instruction = open("../benchmark/dataset/instructions/reasoning_instruction_full_scitrek.txt").read()
             instruction = instruction.replace("<question>", question)
 
             generations = []

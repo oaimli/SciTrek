@@ -13,7 +13,7 @@ import sqlite3
 import sys
 
 sys.path.append("../")
-from bench.dataset.data_loading import load_test, load_articles
+from benchmark.dataset.data_loading import load_test, load_articles
 
 
 def constructing_db_gold(cluster_papers):
@@ -396,7 +396,7 @@ if __name__ == "__main__":
     # testing on different sample levels
     for sample_level in sample_levels:
         save_name = f"../results_test/{sample_level}_{target_mode}_{model_name_save}.jsonl"
-        samples_test = load_test(prefix=sample_level, samples_folder="../bench/dataset/samples/final/")
+        samples_test = load_test(prefix=sample_level, samples_folder="../benchmark/dataset/samples/final/")
         # the process is slow, we sample a subset for each sample_level
         if len(samples_test) > 50:
             samples_test = random.sample(samples_test, 50)

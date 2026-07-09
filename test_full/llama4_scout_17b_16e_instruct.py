@@ -9,7 +9,7 @@ import os
 import sys
 
 sys.path.append("../")
-from bench.dataset.data_loading import load_test, load_articles, get_full_texts, get_titles
+from benchmark.dataset.data_loading import load_test, load_articles, get_full_texts, get_titles
 
 if __name__ == "__main__":
     model_name_official = "meta-llama/Llama-4-Scout-17B-16E-Instruct"
@@ -20,7 +20,7 @@ if __name__ == "__main__":
     # sample_level = "512k"  # vllm 534528
     sample_level = "1024k"  # vllm 1058816
 
-    articles_all = load_articles(articles_folder="../bench/article/")
+    articles_all = load_articles(articles_folder="../benchmark/article/")
 
     save_name = f"../results_test/{sample_level}_{target_mode}_{model_name_save}.jsonl"
     if os.path.exists(save_name):
@@ -30,7 +30,7 @@ if __name__ == "__main__":
                 samples_test.append(line)
         print("existing results loaded", len(samples_test))
     else:
-        samples_test = load_test(prefix=sample_level, samples_folder="../bench/dataset/samples/final/")
+        samples_test = load_test(prefix=sample_level, samples_folder="../benchmark/dataset/samples/final/")
         print("original samples loaded", len(samples_test))
 
     openai_api_key = "EMPTY"
@@ -46,7 +46,7 @@ if __name__ == "__main__":
             question = sample["question"]
             markdowns = get_full_texts(sample, articles_all)
             context = "\n".join(markdowns)
-            instruction = open("../benchmark/dataset/instructions/full_instruction.txt").read()
+            instruction = open("../benchmark/dataset/instructions/instruction_full_scitrek.txt").read()
             instruction = instruction.replace("<question>", question)
 
             prompt_content = instruction.replace("<articles>", context)
