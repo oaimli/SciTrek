@@ -14,7 +14,7 @@ if __name__ == "__main__":
     target_mode = "test_meta"
     sample_levels = ["64k", "128k", "512k", "1024k"]
 
-    articles_all = load_articles(articles_folder="../bench/article/")
+    articles_all = load_articles(articles_folder="../benchmark/article/")
 
     api_key = os.environ["OPENAI_API_KEY"]
     client = OpenAI(api_key=api_key)
