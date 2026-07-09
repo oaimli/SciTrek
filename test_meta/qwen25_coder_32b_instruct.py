@@ -13,7 +13,7 @@ import sqlite3
 import sys
 
 sys.path.append("../")
-from bench.dataset.data_loading import load_test, load_articles
+from benchmark.dataset.data_loading import load_test, load_articles
 
 
 def constructing_db(cluster_papers):
@@ -141,12 +141,12 @@ if __name__ == "__main__":
     sampling_params = SamplingParams(n=3, temperature=0.7, top_p=0.8, top_k=20, repetition_penalty=1.05,
                                      max_tokens=8192)
 
-    papers_all = load_articles(articles_folder="../bench/article/")
+    papers_all = load_articles(articles_folder="../benchmark/article/")
 
     # testing on different sample levels
     for sample_level in sample_levels:
         save_name = f"../results_test/{sample_level}_{target_mode}_{model_name_save}.jsonl"
-        samples_test = load_test(prefix=sample_level, samples_folder="../bench/dataset/samples/final/")
+        samples_test = load_test(prefix=sample_level, samples_folder="../benchmark/dataset/samples/final/")
         print("original samples loaded", len(samples_test))
 
         for sample_index, sample in tqdm(enumerate(samples_test), total=len(samples_test),

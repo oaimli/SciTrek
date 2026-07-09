@@ -6,7 +6,7 @@ import os
 
 import sys
 sys.path.append("../")
-from bench.dataset.data_loading import load_test, get_tables, load_articles
+from benchmark.dataset.data_loading import load_test, get_tables, load_articles
 
 if __name__ == "__main__":
     model_name_official = "o4-mini-2025-04-16"
@@ -14,7 +14,7 @@ if __name__ == "__main__":
     target_mode = "test_meta"
     sample_levels = ["64k", "128k", "512k", "1024k"]
 
-    articles_all = load_articles(articles_folder="../bench/article/")
+    articles_all = load_articles(articles_folder="../benchmark/article/")
 
     api_key = os.environ["OPENAI_API_KEY"]
     client = OpenAI(api_key=api_key)
@@ -29,7 +29,7 @@ if __name__ == "__main__":
                     samples_test.append(line)
             print("existing results loaded", len(samples_test))
         else:
-            samples_test = load_test(prefix=sample_level, samples_folder="../bench/dataset/samples/final/")
+            samples_test = load_test(prefix=sample_level, samples_folder="../benchmark/dataset/samples/final/")
             print("original samples loaded", len(samples_test))
 
         for sample_index, sample in tqdm(enumerate(samples_test), total=len(samples_test), desc=f"{model_name_save}_{sample_level}"):
@@ -44,7 +44,7 @@ if __name__ == "__main__":
                 table_citing_cited_text = "\n".join(
                     [", ".join([str(tmp) for tmp in row]) for row in table_citing_cited])
 
-                instruction = open("../benchmark/dataset/instructions/meta_instruction.txt").read()
+                instruction = open("../benchmark/dataset/instructions/instruction_meta_scitrek.txt").read()
                 instruction = instruction.replace("<question>", question)
                 instruction = instruction.replace("<table-articles>", table_articles_text)
                 instruction = instruction.replace("<table-article_author>", table_article_author_text)
