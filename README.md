@@ -1,4 +1,4 @@
-# SciTrek: A Benchmark for Long-Context Language Models Based on Numerical Reasoning over Scientific Articles
+# SciTrek: Evaluating and Improving Long-Context Numerical Reasoning over Scientific Articles
 [![arXiv](https://img.shields.io/badge/arxiv-2509.21028-lightgrey)](https://arxiv.org/pdf/2509.21028) [![dataset](https://img.shields.io/badge/dataset-SciTrek-orange)](https://huggingface.co/datasets/oaimli/SciTrek) [![code](https://img.shields.io/badge/GitHub-SciTrek-darkblue
 )](https://github.com/oaimli/SciTrek)
 
