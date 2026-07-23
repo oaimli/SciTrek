@@ -150,15 +150,15 @@ For post-training with supervised fine-tuning (SFT) and Reinforcement Learning w
 
 If you are going to use our dataset to test or train your model, please cite our paper:
 
-[Li et al. 2025] Miao Li, Alexander Gurung, Irina Saparina, Mirella Lapata. "Who Gets Cited Most? Benchmarking Long-Context Numerical Reasoning on Scientific Articles". arXiv 2509.21028, 2025.
+[Li et al. 2026] Miao Li, Alexander Gurung, Irina Saparina, Mirella Lapata. "SciTrek: Evaluating and Improving Long-Context Numerical Reasoning over Scientific Articles". arXiv 2509.21028, 2025.
 ```
-@inproceedings{scitrek_2025,
-  title={Who Gets Cited Most? Benchmarking Long-Context Numerical Reasoning on Scientific Articles},
+@inproceedings{scitrek_2026,
+  title={SciTrek: Evaluating and Improving Long-Context Numerical Reasoning over Scientific Articles},
   author={Miao Li, Alexander Gurung, Irina Saparina, Mirella Lapata},
   booktitle={arXiv 2509.21028},
-  year={2025}
+  year={2026}
 }
 ```
 
 
-If you have any questions about using our data, feel free to contact miao.li@ed.ac.uk.
+If you have any questions about using our data, feel free to reach out at miao.li@ed.ac.uk.
