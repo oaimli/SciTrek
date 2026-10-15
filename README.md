@@ -150,13 +150,17 @@ For post-training with supervised fine-tuning (SFT) and Reinforcement Learning w
 
 If you are going to use our dataset to test or train your model, please cite our paper:
 
-[Li et al. 2026] Miao Li, Alexander Gurung, Irina Saparina, Mirella Lapata. "SciTrek: Evaluating and Improving Long-Context Numerical Reasoning over Scientific Articles". arXiv 2509.21028, 2025.
+[Li et al. 2026] Miao Li, Alexander Gurung, Irina Saparina, Mirella Lapata. "SciTrek: Evaluating and Improving Long-Context Numerical Reasoning over Scientific Articles". TMLR, September 2026.
 ```
-@inproceedings{scitrek_2026,
-  title={SciTrek: Evaluating and Improving Long-Context Numerical Reasoning over Scientific Articles},
-  author={Miao Li, Alexander Gurung, Irina Saparina, Mirella Lapata},
-  booktitle={arXiv 2509.21028},
-  year={2026}
+@article{
+li2026scitrek,
+title={SciTrek: Evaluating and Improving Long-Context Numerical Reasoning over Scientific Articles},
+author={Miao Li and Alexander Gurung and Irina Saparina and Mirella Lapata},
+journal={Transactions on Machine Learning Research},
+issn={2835-8856},
+year={2026},
+url={https://openreview.net/forum?id=QCwLJISzzG},
+note={}
 }
 ```
 
